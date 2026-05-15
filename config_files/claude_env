@@ -1,0 +1,20 @@
+export API_TIMEOUT_MS=3000000
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+
+openrouter() {
+  export ANTHROPIC_AUTH_TOKEN=$OPENROUTER_KEY
+  export ANTHROPIC_BASE_URL=https://openrouter.ai/api
+
+  export CURRENT_MODEL=nvidia/nemotron-3-super-120b-a12b:free
+  export ANTHROPIC_MODEL=$CURRENT_MODEL
+}
+
+localhost() {
+  export ANTHROPIC_AUTH_TOKEN=EMPTY
+  export ANTHROPIC_BASE_URL=localhost:11434
+
+  export CURRENT_MODEL=qwen3.5
+  export ANTHROPIC_MODEL=$CURRENT_MODEL
+}
+
+openrouter

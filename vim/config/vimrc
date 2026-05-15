@@ -1,0 +1,54 @@
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
+scriptencoding utf-8
+
+" Environment {
+    " Identify platform {
+        silent function! OSX()
+            return has('macunix')
+        endfunction
+
+        silent function! LINUX()
+            return has('unix') && !has('macunix') && !has('win32unix')
+        endfunction
+
+        silent function! WINDOWS()
+            return  (has('win32') || has('win64'))
+        endfunction
+    " }
+" }
+
+" Resolve config directory from $MYVIMRC {
+    let s:config_dir = fnamemodify(resolve($MYVIMRC), ':h')
+
+    " Leader must be set BEFORE sourcing plugin config that uses <leader>
+    let g:mapleader = ','
+    let g:maplocalleader = ','
+" }
+
+" Vim-plug {
+    let s:plug_conf = s:config_dir . '/vimrc.plugins'
+    if filereadable(s:plug_conf)
+        execute 'source' s:plug_conf
+    endif
+" }
+
+" Config {
+    let s:conf = s:config_dir . '/vimrc.conf'
+    if filereadable(s:conf)
+        execute 'source' s:conf
+    endif
+" }
+
+" Mappings {
+    let s:maps = s:config_dir . '/vimrc.maps'
+    if filereadable(s:maps)
+        execute 'source' s:maps
+    endif
+" }
+
+" Custom {
+    let s:custom = s:config_dir . '/vimrc.custom'
+    if filereadable(s:custom)
+        execute 'source' s:custom
+    endif
+" }

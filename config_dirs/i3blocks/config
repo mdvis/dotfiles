@@ -1,0 +1,39 @@
+# Global defaults
+separator=true
+separator_block_width=15
+interval=5
+
+#------------------------------------------------------------
+# Network
+#------------------------------------------------------------
+
+[wifi]
+label=󰖩
+command=/usr/share/i3blocks/wifi
+color=#50FA7B
+
+[ethernet]
+label=󰌗
+command=/usr/share/i3blocks/iface
+color=#50FA7B
+
+[disk]
+label=
+command=/usr/share/i3blocks/disk
+color=#50FA7B
+
+[memory]
+label=
+command=/usr/share/i3blocks/memory
+color=#50FA7B
+
+[battery]
+full_text=󱊣
+command=/usr/share/i3blocks/battery
+
+#------------------------------------------------------------
+# Time
+#------------------------------------------------------------
+
+[time]
+command=date '+%m/%d  %H:%M'

@@ -1,0 +1,12 @@
+[tools]
+bun = "latest"
+go = "1.23.10"
+node = "latest"
+deno = "latest"
+rust = "latest"
+java = "openjdk-21"
+python = "latest"
+ruby = "latest"
+rust-analyzer = "latest"
+clang = "22.1.4"
+cmake = "4.3.2"

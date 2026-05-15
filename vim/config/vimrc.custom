@@ -1,0 +1,141 @@
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
+scriptencoding utf-8
+
+" custom comment {
+  function! FirstLineHasContent()
+    let firstline=getline(1)
+    return len(firstline)
+  endfunc
+
+  let g:sh_comment_start_symbol='# ------'
+  let g:sh_comment_symbol='#'
+  let g:sh_comment_end_symbol='# ------'
+
+  let g:js_comment_start_symbol='/**'
+  let g:js_comment_symbol=' *'
+  let g:js_comment_end_symbol=' */'
+
+  let g:vi_comment_start_symbol='" ------'
+  let g:vi_comment_symbol='"'
+  let g:vi_comment_end_symbol='" ------'
+
+  let g:py_comment_start_symbol='#! /usr/bin/env python3'
+  let g:py_comment_symbol='# -*- coding: utf-8 -*-'
+  let g:py_comment_end_symbol="'''"
+
+  let g:go_comment_start_symbol='// ------'
+  let g:go_comment_symbol='//'
+  let g:go_comment_end_symbol='// ------'
+
+  let g:rs_comment_start_symbol='/**'
+  let g:rs_comment_symbol=' *'
+  let g:rs_comment_end_symbol=' */'
+
+  function! PyTpl(start, mid, end)
+    let start = a:start
+    let mid = a:mid
+    let end = a:end
+    let str=''.start."\n".mid."\n"
+          \."'''date: ".strftime('%Y-%m-%d')."\n"
+          \.end
+    put!=str
+  endfunc
+
+  function! Tpl(start, mid, end)
+    let start = a:start
+    let mid = a:mid
+    let end = a:end
+    let str=''.start."\n".mid.' name: '.expand('%:t')."\n"
+          \.mid." author: Deve\n".mid.' date: '
+          \.strftime('%Y-%m-%d')."\n".end
+    put!=str
+  endfunc
+
+  function! SetTpl()
+    if &filetype ==# 'python'
+      call PyTpl(g:py_comment_start_symbol, g:py_comment_symbol
+            \,g:py_comment_end_symbol)
+      return
+    endif
+    if &filetype ==# 'sh'
+      call Tpl(g:sh_comment_start_symbol, g:sh_comment_symbol
+            \,g:sh_comment_end_symbol)
+      return
+    endif
+    if &filetype ==# 'javascript' || &filetype==#'typescript'
+          \|| &filetype==#'css' || &filetype==#'scss'
+          \|| &filetype==#'javascriptreact' || &filetype==#'typescriptreact'
+      call Tpl(g:js_comment_start_symbol, g:js_comment_symbol
+            \,g:js_comment_end_symbol)
+      return
+    endif
+    if &filetype ==# 'vim'
+      call Tpl(g:vi_comment_start_symbol, g:vi_comment_symbol
+            \,g:vi_comment_end_symbol)
+      return
+    endif
+    if &filetype ==# 'go'
+      call Tpl(g:go_comment_start_symbol, g:go_comment_symbol
+            \,g:go_comment_end_symbol)
+      return
+    endif
+    if &filetype ==# 'rust'
+      call Tpl(g:rs_comment_start_symbol, g:rs_comment_symbol
+            \,g:rs_comment_end_symbol)
+      return
+    endif
+  endfunc
+
+  function! ShouldTpl()
+    let flhc = FirstLineHasContent()
+    if !flhc
+       call SetTpl()
+    endif
+  endfunc
+
+  augroup Tpl
+    autocmd!
+    autocmd BufNewFile * call ShouldTpl()
+  augroup End
+" }
+
+" Wechat Filetype {
+  augroup wechat
+    autocmd!
+    autocmd BufRead,BufNewFile *.wxss set filetype=css
+    autocmd BufRead,BufNewFile *.wxml set filetype=html
+  augroup END
+" }
+
+" $MYVIMRC {
+  " edit
+  command! -nargs=0 EConf :call conf#EditConf()
+  " source
+  command! -nargs=0 SConf :call conf#SourceConf()
+
+  " Rg: search with fzf + ripgrep
+  command! -bang -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always --smart-case '
+        \   .shellescape(<q-args>), 1,
+        \   fzf#vim#with_preview(), <bang>0)
+" }
+"
+" Return to last edit position when opening files (You want this!)
+augroup lastModPos
+  autocmd!
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+" autoread {
+augroup chkt
+  au FocusGained,BufEnter * checktime
+augroup END
+" }
+
+" highlight Normal ctermbg=none
+highlight ColorColumn ctermbg=96

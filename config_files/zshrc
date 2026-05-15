@@ -1,0 +1,55 @@
+if [ -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ];then
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
+# sys
+export GPG_TTY=$(tty)
+export EDITOR=vim
+export VISUAL=code
+
+export LC_ALL=
+export LANG="zh_CN.UTF-8"
+export LC_TIME="zh_CN.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_COLLATE="zh_CN.UTF-8"
+export LC_NUMERIC="zh_CN.UTF-8"
+export LC_MESSAGES="zh_CN.UTF-8"
+export LC_MONETARY="zh_CN.UTF-8"
+
+export PATH="${HOME}/.local/bin:$PATH"
+
+[[ -f ~/.alias ]] && . ~/.alias
+[[ -f ~/.api_keys ]] && . $HOME/.api_keys
+[[ -f ~/.claude_env ]] && . $HOME/.claude_env
+# sys end
+
+# homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+# homebrew end
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd -H -t f -t d --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build}"
+export FZF_DEFAULT_OPTS="--height 40% --border --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -50'"
+# fzf end
+
+# antigen
+source "$HOME/.antigen.zsh"
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle MichaelAquilina/zsh-you-should-use
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+# antigen  end
+
+# other tools
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
+eval "$(mise activate zsh)"
+
+# husky
+export HUSKY=0 # Disables all Git hooks
+# husky end
+
+# other tools end
