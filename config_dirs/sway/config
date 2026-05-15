@@ -11,15 +11,14 @@ set $right l
 
 # Your preferred terminal emulator
 set $term foot
-set $thunder foot --app-id=dropdown
 
 # Your preferred application launcher
-set $menu rofi -show drun
+set $menu rofi -show drun -show-icons
 
 ### Output configuration
 
 # Default wallpaper
-set $wallpaper ~/.myprofile/wallpapers/desktop-bg.jxl
+set $wallpaper ~/.dotfiles/wallpapers/desktop-bg.jpg
 exec swaybg --image $wallpaper --mode stretch
 # output * bg $wallpaper fill
 
@@ -67,9 +66,6 @@ bindsym $mod+Shift+q kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
-
-# Thunder term
-bindsym F12 exec $thunder
 
 # Move your focus around
 bindsym $mod+$left focus left
