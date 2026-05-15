@@ -1,0 +1,20 @@
+[window]
+startup_mode = "Maximized"
+opacity = 0.85
+
+[font.normal]
+family = "SauceCodePro Nerd Font Mono"
+style = "Regular"
+
+[font]
+size = 16.0
+
+[terminal.shell]
+program = "/usr/local/bin/tmux"
+
+[cursor.style]
+shape = "Block"
+blinking = "Always"
+
+[selection]
+save_to_clipboard = true

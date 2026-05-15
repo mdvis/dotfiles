@@ -1,0 +1,23 @@
+# General
+*.swp
+.DS_Store
+.sync.ffs_db
+
+# Vim
+ftplugin
+plugged
+**/gocomplete.vim
+.netrwhist
+/session
+**/*.log
+
+# Nix
+nix/flake.lock
+nix/result
+nix/result-*
+.direnv
+.devenv
+*.derivation
+
+# Media
+**/watch_later

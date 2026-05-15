@@ -1,0 +1,66 @@
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
+scriptencoding utf-8
+
+" mapleader is set in vimrc (before vimrc.plugins)
+
+" verbose nnoremap <leader>j
+
+" Mappings {
+    " Augment {
+        inoremap <leader>y <cmd>call augment#Accept()<CR>
+    " }
+
+    " Fzf {
+        nmap <silent> <C-p> :Files<CR>
+        nnoremap <silent> <leader>b :Buffers<CR>
+        nnoremap <silent> <leader>R :Rg<CR>
+    " }
+
+    " Ale {
+        nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
+        nmap <silent> <leader>aj <Plug>(ale_next_wrap)
+    " }
+
+    " Easy Align{
+        xmap ga <Plug>(EasyAlign)
+        nmap ga <Plug>(EasyAlign)
+    " }
+
+    " NerdTree {
+        map <silent> <leader>e :NERDTreeFind<CR>
+        map <silent> <leader>n :NERDTreeToggle<CR>
+    " }
+
+    " Tagbar {
+        nmap <silent> <leader>t :TagbarToggle<CR>
+    " }
+
+    " Undotree {
+        nnoremap <silent> <leader>u :UndotreeToggle<CR>
+    " }
+
+    " Fugitive {
+        nmap <silent> <leader>gs :G<CR>
+    " }
+
+    " TPL {
+        nmap <silent> <leader><leader>t :call SetTpl()<CR>
+    " }
+
+    " Self {
+        nnoremap <silent> <leader><leader>o :browse oldfiles<CR>
+        nnoremap <silent> <leader><CR> :noh<CR>
+        nnoremap <silent> <leader>r :reg<CR>
+        nnoremap <C-h> <c-w>h
+        nnoremap <C-j> <c-w>j
+        nnoremap <C-k> <c-w>k
+        nnoremap <C-l> <c-w>l
+        nnoremap j gj
+        nnoremap k gk
+        nnoremap <leader>h ^
+        nnoremap <leader>l g_
+        nnoremap <leader>cc :set cursorcolumn!<CR>
+        " Restore screen redraw (was overridden by <C-l> window nav)
+        nnoremap <leader>cl :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
+    " }
+" }

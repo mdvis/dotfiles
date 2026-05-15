@@ -1,0 +1,307 @@
+" vim: set sw=2 ts=2 sts=2 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
+scriptencoding utf-8
+
+" Plugins Beginning {
+    let g:Plug_dir = '~/.vim/plugged/'
+
+    filetype off
+
+    call plug#begin(g:Plug_dir)
+
+    " Plugins list {
+        Plug 'editorconfig/editorconfig-vim'
+        Plug 'yggdroot/indentline'
+
+        Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+        Plug 'tpope/vim-repeat'
+        Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
+
+        Plug 'tpope/vim-surround'
+        Plug 'Raimondi/delimitMate'              " Auto-close quotes/brackets
+
+        Plug 'junegunn/vim-easy-align'
+
+        Plug 'ap/vim-css-color'
+
+        " Status/Tabline {
+            Plug 'vim-airline/vim-airline'
+            Plug 'vim-airline/vim-airline-themes'
+        " }
+
+        " Snippet {
+            Plug 'honza/vim-snippets'           " Snippets (used by coc-snippets)
+        " }
+
+        " Golang {
+            Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+        " }
+
+        " File {
+            Plug 'preservim/nerdtree'
+            Plug 'tpope/vim-commentary'
+            Plug 'ryanoasis/vim-devicons'
+            Plug 'Xuyuanp/nerdtree-git-plugin'  " Status/Flags
+        " }
+
+        " Search {
+            Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+            Plug 'junegunn/fzf.vim'
+
+            Plug 'airblade/vim-rooter'
+        " }
+
+        " Syntax and Fix {
+            Plug 'dense-analysis/ale'
+        " }
+
+        " Complete {
+            Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        " }
+
+        " Rust {
+            Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+        " }
+
+        " Colorscheme {
+            Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+        " }
+
+        " Git {
+            Plug 'tpope/vim-fugitive', { 'on': ['G', 'Gdiff', 'Gblame'] }
+        " }
+
+        " Augment {
+            Plug 'augmentcode/augment.vim'
+        " }
+    " }
+
+    call plug#end()
+" Plugins End }
+
+" Plugin Config Start {
+    " Coc.nvim {
+        set completeopt=menu,menuone,preview
+        set signcolumn=yes
+
+        " Unified Tab handler: completion nav + delimitMate jump + snippet
+        function! s:smart_tab() abort
+            if pumvisible()
+                return "\<C-n>"
+            endif
+            if exists('*delimitMate#JumpAny')
+                let l:dm = delimitMate#JumpAny()
+                if l:dm !=# ''
+                    return "\<C-R>=delimitMate#JumpAny()\<CR>"
+                endif
+            endif
+            return "\<TAB>"
+        endfunction
+        inoremap <silent><expr> <TAB> <SID>smart_tab()
+        inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+        " <C-l> in insert mode: expand snippet or jump to next placeholder
+        imap <C-l> <Plug>(coc-snippets-expand-jump)
+
+        " Use <CR> to confirm completion
+        inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+        " GoTo code navigation (use <leader> prefix to avoid overriding gi/gr)
+        nmap <silent> <leader>cd <Plug>(coc-definition)
+        nmap <silent> <leader>cy <Plug>(coc-type-definition)
+        nmap <silent> <leader>ci <Plug>(coc-implementation)
+        nmap <silent> <leader>cr <Plug>(coc-references)
+
+        " Use K to show documentation
+        nnoremap <silent> K :call <SID>show_documentation()<CR>
+        function! s:show_documentation()
+            if (index(['vim','help'], &filetype) >= 0)
+                execute 'h '.expand('<cword>')
+            else
+                call CocAction('doHover')
+            endif
+        endfunction
+
+        " Symbol renaming
+        nmap <leader>cn <Plug>(coc-rename)
+
+        " Format selected region
+        xmap <leader>cf  <Plug>(coc-format-selected)
+        nmap <leader>cf  <Plug>(coc-format-selected)
+
+        " CoC extensions (install with :CocInstall)
+        let g:coc_global_extensions = [
+                    \ 'coc-json',
+                    \ 'coc-tsserver',
+                    \ 'coc-html',
+                    \ 'coc-css',
+                    \ 'coc-pyright',
+                    \ 'coc-go',
+                    \ 'coc-rust-analyzer',
+                    \ 'coc-clangd',
+                    \ 'coc-sh',
+                    \ 'coc-yaml',
+                    \ 'coc-snippets',
+                    \ ]
+    " }
+
+    " delimitMate {
+        let g:delimitMate_tab2exit = 0  " Disable Tab mapping, handled by smart_tab()
+    " }
+
+    " NerdTree {
+        let g:NERDTreeWinSize=40
+        let g:NERDTreeChDirMode=1
+        let g:NERDTreeMouseMode=2
+        let g:NERDTreeQuitOnOpen=1
+        let g:NERDTreeShowHidden=1
+        let g:NERDTreeShowBookmarks=1
+        let g:NERDTreeKeepTreeInNewTab=1
+        let g:NERDTreeDirArrowExpandable = '+'
+        let g:NERDTreeDirArrowCollapsible = '-'
+
+        let g:NERDTreeIgnore=[
+                    \ '\.py[cd]$', '\~$', '\.swo$',
+                    \ '\.swp$', '^\.git$', '^\.hg$',
+                    \ '^\.svn$', '\.bzr$', '^\.DS_Store',
+                    \ 'node_modules', '\.meta$', '\.fire$']
+
+        let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ 'Modified'  : '*',
+            \ 'Staged'    : '+',
+            \ 'Untracked' : '✭',
+            \ 'Renamed'   : '➜',
+            \ 'Unmerged'  : '═',
+            \ 'Deleted'   : 'x',
+            \ 'Dirty'     : '✗',
+            \ 'Clean'     : '✔︎',
+            \ 'Ignored'   : '☒',
+            \ 'Unknown'   : '?' }
+    " }
+
+    " Snippets {
+        " coc-snippets: <C-l> to expand/jump (insert mode)
+        "                <C-j>/<C-k> to jump forward/backward in placeholders
+        let g:coc_snippet_next = '<c-j>'
+        let g:coc_snippet_prev = '<c-k>'
+    " }
+
+    " Ale {
+        augroup FiletypeGroup
+            autocmd!
+            au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+            au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+        augroup END
+
+        let g:ale_fix_on_save=1
+        let g:ale_lint_on_enter=0 " 1
+        let g:ale_lint_on_insert_leave=1
+
+        let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+        let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+        let g:ale_c_cppcheck_options = ''
+        let g:ale_cpp_cppcheck_options = ''
+
+        let g:ale_linter_aliases = {
+                    \   'vue':['vue', 'javascript'],
+                    \   'jsx':['css', 'javascript'],
+                    \   'tsx':['css', 'typescript']}
+
+        let g:ale_fixers = {
+                    \   '*':['remove_trailing_lines', 'trim_whitespace'],
+                    \   'sql':['sqlfluff'],
+                    \   'c':[ 'clangd','uncrustify'],
+                    \   'cmake':['cmake-format'],
+                    \   'cpp':[ 'clangd','uncrustify'],
+                    \   'css':['prettier'],
+                    \   'dockerfile':['dprint'],
+                    \   'go':['gofmt'],
+                    \   'graphqls':['prettier'],
+                    \   'html':['prettier'],
+                    \   'jsx':['prettier', 'eslint'],
+                    \   'tsx':['prettier', 'eslint'],
+                    \   'java':['uncrustify'],
+                    \   'javascript':['biome', 'eslint'],
+                    \   'javascriptreact':['biome', 'eslint'],
+                    \   'typescriptreact':['biome', 'eslint'],
+                    \   'typescript':['biome', 'eslint'],
+                    \   'jsonc':['biome', 'prettier'],
+                    \   'json':['biome', 'prettier'],
+                    \   'less':['prettier'],
+                    \   'lua':['stylua'],
+                    \   'markdown':['prettier'],
+                    \   'python':['ruff'],
+                    \   'r':['styler'],
+                    \   'rust':['rustfmt'],
+                    \   'scss':['prettier'],
+                    \   'sh':['shfmt'],
+                    \   'swift':['swiftformat'],
+                    \   'toml':['dprint'],
+                    \   'vue':['prettier'],
+                    \   'xml':['xmllint'],
+                    \   'yaml':['prettier']}
+
+        let g:ale_linters = {
+                    \   'sql':['sqlfluff'],
+                    \   'c':['cc','gcc','clang', 'clangd', 'cspell'],
+                    \   'cmake':['cmake-lint', 'cspell'],
+                    \   'cpp':['cc','gcc','clang', 'clangd', 'cspell'],
+                    \   'css':['stylelint', 'cspell'],
+                    \   'dockerfile':['hadolint'],
+                    \   'gitcommit':['gitlint', 'cspell'],
+                    \   'glsl':['glslang', 'cspell'],
+                    \   'go':['gopls', 'cspell'],
+                    \   'gohtmltmpl':['djlint', 'cspell'],
+                    \   'graphqls':['eslint'],
+                    \   'html':['alex', 'cspell'],
+                    \   'jsx':['eslint', 'cspell'],
+                    \   'tsx':['eslint', 'cspell'],
+                    \   'java':['checkstyle', 'cspell'],
+                    \   'javascript':['biome', 'eslint', 'cspell'],
+                    \   'javascriptreact':['biome', 'eslint', 'cspell'],
+                    \   'typescriptreact':['biome', 'eslint', 'cspell'],
+                    \   'typescript':['biome', 'eslint', 'cspell'],
+                    \   'jsonc':['biome', 'eslint', 'cspell'],
+                    \   'json':['biome', 'eslint', 'cspell'],
+                    \   'less':['stylelint'],
+                    \   'lua':['luac', 'cspell'],
+                    \   'markdown':['alex', 'cspell'],
+                    \   'python':['ruff', 'cspell'],
+                    \   'r':['lintr', 'cspell'],
+                    \   'rust':['analyzer', 'cargo', 'rustc', 'cspell'],
+                    \   'scss':['stylelint'],
+                    \   'sh':['shellcheck', 'cspell'],
+                    \   'swift':['swiftlint', 'cspell'],
+                    \   'vim':['vint'],
+                    \   'vue':['eslint', 'vls', 'cspell'],
+                    \   'xml':['xmllint'],
+                    \   'yaml':['yamllint']}
+    " }
+
+    " Nerdtree syntax highlight {
+        let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
+        let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
+    " }
+
+    " FZF {
+        let g:fzf_action = {
+                    \ 'ctrl-e': 'edit',
+                    \ 'ctrl-t': 'tab split',
+                    \ 'ctrl-x': 'split',
+                    \ 'ctrl-v': 'vsplit' }
+    " }
+
+    " Rooter {
+        let g:rooter_patterns = [
+                    \ 'package.json', 'setup.py', 'pyproject.toml',
+                    \ 'requirements.txt', 'MANIFEST.in', 'manage.py',
+                    \ 'pom.xml', 'build.gradle', 'go.mod', 'go.sum', 'Gemfile',
+                    \ 'Gemfile.lock', 'composer.json', 'composer.lock',
+                    \ 'Makefile', 'CMakeLists.txt', 'Cargo.toml' ]
+        let g:rooter_ignore = 1
+    " }
+
+    " Go {
+        let g:go_def_mode='gopls'
+        let g:go_info_mode='gopls'
+    " }
+" Plugin Config End }

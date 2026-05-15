@@ -1,0 +1,26 @@
+return {
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+  cmd = { "MasonToolsInstall", "MasonToolsInstallSync", "MasonToolsUpdate", "MasonToolsClean" },
+  event = { "BufReadPost", "BufNewFile" },
+  dependencies = { "mason-org/mason.nvim" },
+  opts = {
+    ensure_installed = {
+      "gofumpt",
+      "goimports",
+      "golangci-lint",
+      "luacheck",
+      "markdownlint-cli2",
+      "prettier",
+      "prettierd",
+      "ruff",
+      "shellcheck",
+      "shfmt",
+      "stylua",
+      "yamllint",
+    },
+    auto_update = false,
+    run_on_start = true,
+    start_delay = 2500,
+    debounce_hours = 12,
+  },
+}
