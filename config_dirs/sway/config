@@ -19,7 +19,7 @@ set $menu rofi -show drun -show-icons
 
 # Default wallpaper
 set $wallpaper ~/.dotfiles/wallpapers/desktop-bg.jpg
-exec swaybg --image $wallpaper --mode stretch
+exec swaybg -i $wallpaper -m fill
 # output * bg $wallpaper fill
 
 # output eDP-1 resolution 1920x1080 position 0,0
