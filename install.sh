@@ -163,6 +163,10 @@ cd "${DOTFILES_PATH}" || exit 1
 command -v apt &>/dev/null && . "${DOTFILES_PATH}/setup-apt.sh"
 command -v brew &>/dev/null && . "${DOTFILES_PATH}/setup-brew.sh"
 
+# ── tools ────────────────────────────────────────────────────────────────────
+
+. "${DOTFILES_PATH}/setup-tools.sh"
+
 # ── fonts ────────────────────────────────────────────────────────────────────
 
 install_fonts
