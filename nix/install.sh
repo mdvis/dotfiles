@@ -6,31 +6,25 @@
 # date: 2022-03-27
 # ------
 
-set -e
-set -o pipefail
+# When sourced from install.sh, DOTFILES_PATH / msg / success / error
+# are already defined. When run standalone, define them here.
+if [ -z "${DOTFILES_PATH+x}" ]; then
+    DOTFILES_PATH="${HOME}/.dotfiles"
 
-DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
+    Red='\033[0;31m'
+    Green='\033[0;32m'
+    Color_off='\033[0m'
+
+    msg()     { printf '%b\n' "$1" >&2; }
+    success() { msg "${Green}[✔]${Color_off} ${1}"; }
+    error()   { msg "${Red}[✘]${Color_off} ${1}"; exit 1; }
+fi
+
 NIX_CONFIG_PATH="${DOTFILES_PATH}/nix"
-
-Red='\033[0;31m'
-Green='\033[0;32m'
-Color_off='\033[0m'
-
-msg() {
-    printf '%b\n' "$1" >&2
-}
-
-success() {
-    msg "${Green}[✔]${Color_off} ${1}"
-}
-
-error() {
-    msg "${Red}[✘]${Color_off} ${1}"
-    exit 1
-}
 
 # ── preflight ────────────────────────────────────────────────────────────────
 
+[[ "$(uname -s | tr '[:upper:]' '[:lower:]')" != "linux" ]] && error "Nix setup is Linux only"
 command -v nix >/dev/null 2>&1 || error "nix is not installed"
 
 # ── nix.conf ─────────────────────────────────────────────────────────────────
@@ -54,7 +48,6 @@ success "Nix flake linked!"
 
 msg "Installing packages from flake (this may take a while)..."
 
-# Check if all-pkgs is already in the profile; upgrade if so, install if not
 if nix profile list 2>/dev/null | grep -q "all-pkgs"; then
     nix profile upgrade '.*all-pkgs.*' \
         --extra-experimental-features 'nix-command flakes' \
