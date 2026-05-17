@@ -52,7 +52,9 @@ backup() {
     list="$*"
     time=$(date +%s)
     for i in $list; do
-        if [[ -e "${i}" ]]; then
+        if [[ -L "${i}" ]]; then
+            rm "${i}"
+        elif [[ -e "${i}" ]]; then
             mv "${i}" "${i}.${time}.backup"
             success "Backup ${i} done!"
         fi
