@@ -28,26 +28,30 @@ backup() {
     local time
     time=$(date +%s)
     for i in "$@"; do
-        if [[ -e "${i}" ]]; then
+        if [[ -e "${i}" || -L "${i}" ]]; then
             mv "${i}" "${i}.${time}.backup"
             success "Backup ${i} done!"
         fi
     done
 }
 
+# Check source path exists
+if [[ ! -d "${REPO_NVIM_PATH}" ]]; then
+    msg "Error: ${REPO_NVIM_PATH} not found"
+    exit 1
+fi
+
 # Link ~/.config/nvim
 mkdir -p "${HOME}/.config"
 backup "${APP_NVIM_PATH}"
-ln -sf "${REPO_NVIM_PATH}" "${APP_NVIM_PATH}"
+rm -f "${APP_NVIM_PATH}"
+ln -s "${REPO_NVIM_PATH}" "${APP_NVIM_PATH}"
 success "nvim directory linked!"
 
 # Install plugins
 echo "Installing nvim plugins..."
-local_shell="$SHELL"
-export SHELL='/bin/sh'
 if command -v nvim >/dev/null 2>&1; then
-    nvim --headless "+Lazy! sync" "+qall" 2>/dev/null || true
+    (export SHELL='/bin/sh'; nvim --headless "+Lazy! sync" "+qall") || msg "Warning: nvim plugin sync failed"
 fi
-export SHELL="${local_shell}"
 
 success "nvim setup done!"
