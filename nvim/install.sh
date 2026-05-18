@@ -46,7 +46,7 @@ echo "Installing nvim plugins..."
 local_shell="$SHELL"
 export SHELL='/bin/sh'
 if command -v nvim >/dev/null 2>&1; then
-    nvim "+PlugInstall!" "+PlugClean" "+qall" 2>/dev/null || true
+    nvim --headless "+Lazy! sync" "+qall" 2>/dev/null || true
 fi
 export SHELL="${local_shell}"
 
