@@ -116,36 +116,8 @@ install_fonts() {
 }
 
 install_vim() {
-    local repo_vim_path="${DOTFILES_PATH}/vim"
-    local repo_nvim_path="${DOTFILES_PATH}/nvim"
-
-    # vim
-    backup "${HOME}/.vim"
-    ln_if "${repo_vim_path}" "${HOME}/.vim"
-    handler "${repo_vim_path}/config" "${HOME}/." "f"
-    success "vim linked!"
-
-    # nvim
-    backup "${HOME}/.config/nvim"
-    ln_if "${repo_nvim_path}" "${HOME}/.config/nvim"
-    success "nvim linked!"
-
-    # install plugins
-    echo "Installing vim/nvim plugins..."
-    local systemShell="$SHELL"
-    export SHELL='/bin/sh'
-
-    if command -v nvim >/dev/null 2>&1; then
-        nvim "+PlugInstall!" "+PlugClean" "+qall" 2>/dev/null || true
-        success "nvim plugins done!"
-    fi
-
-    if command -v vim >/dev/null 2>&1; then
-        vim "+PlugInstall!" "+PlugClean" "+qall" 2>/dev/null || true
-        success "vim plugins done!"
-    fi
-
-    export SHELL="${systemShell}"
+    bash "${DOTFILES_PATH}/vim/install.sh"
+    bash "${DOTFILES_PATH}/nvim/install.sh"
 }
 
 # ── init dirs ────────────────────────────────────────────────────────────────
