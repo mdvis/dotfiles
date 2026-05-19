@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # ------
-# name: cb.sh
+# name: ed.sh
 # author: Deve
 # date: 2022-07-25
 # ------
