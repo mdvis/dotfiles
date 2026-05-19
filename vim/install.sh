@@ -56,11 +56,8 @@ done < <(/usr/bin/find "${REPO_VIM_PATH}/config" -maxdepth 1 -type f -print0)
 
 # Install plugins
 echo "Installing vim plugins..."
-local_shell="$SHELL"
-export SHELL='/bin/sh'
 if command -v vim >/dev/null 2>&1; then
-    vim "+PlugInstall!" "+PlugClean" "+qall" 2>/dev/null || true
+    (export SHELL='/bin/sh'; vim "+PlugInstall!" "+PlugClean" "+qall" 2>/dev/null) || msg "Warning: vim plugin sync failed"
 fi
-export SHELL="${local_shell}"
 
 success "vim setup done!"
