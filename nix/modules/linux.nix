@@ -28,7 +28,6 @@ with pkgs;[
   opentofu
   peazip
   poppler
-  posting
   prettier
   ruff
   rustscan

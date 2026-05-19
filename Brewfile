@@ -64,7 +64,6 @@ brew "pandoc"
 brew "pandoc-crossref"
 brew "poppler"
 brew "postgresql@17", restart_service: :changed
-brew "posting"
 brew "prettier"
 brew "qpdf"
 brew "redis", restart_service: :changed
