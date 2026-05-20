@@ -28,7 +28,10 @@ backup() {
     local time
     time=$(date +%s)
     for i in "$@"; do
-        if [[ -e "${i}" || -L "${i}" ]]; then
+        if [[ -L "${i}" ]]; then
+            rm "${i}"
+            success "Remove symlink ${i}!"
+        elif [[ -e "${i}" ]]; then
             mv "${i}" "${i}.${time}.backup"
             success "Backup ${i} done!"
         fi
