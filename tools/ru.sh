@@ -7,28 +7,41 @@ set -o pipefail
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 handlerText() {
-    begin=0
+    local begin=0
+    local ind=0
+    scriptsLs=()
+    
     while read -r line; do
-        if [[ "${line}" =~ "}" && "${begin}" == "1" ]]; then
+        if [[ "${line}" =~ \} && "${begin}" == "1" ]]; then
             begin=0
         fi
 
         if [[ "${begin}" == "1" ]]; then
-            scriptsLs[ind]=$(echo "${line}" | awk '{print $1}' | sed 's/"\(.*\)":/\1/')
-            ind=$((ind + 1))
+            local script_name=$(echo "${line}" | awk '{print $1}' | sed 's/"\(.*\)":/\1/')
+            if [[ -n "${script_name}" ]]; then
+                scriptsLs[ind]="${script_name}"
+                ind=$((ind + 1))
+            fi
         fi
 
-        if [[ "${line}" =~ "scripts" ]]; then
+        if [[ "${line}" =~ \"scripts\" ]]; then
             begin=1
         fi
     done <"$1"
 }
 
 function runCmd() {
+    if [[ ${#scriptsLs[@]} -eq 0 ]]; then
+        echo "No scripts found in package.json"
+        return 1
+    fi
+    
     select m in "${scriptsLs[@]}"; do
-        [[ -f ".nvmrc" ]] && nvm use
-        npm run "$m"
-        break
+        if [[ -n "$m" ]]; then
+            [[ -f ".nvmrc" ]] && nvm use
+            npm run "$m"
+            break
+        fi
     done
 }
 
@@ -38,4 +51,9 @@ handleCmd() {
     runCmd
 }
 
-handleCmd || (cd "$(fzf)" && handleCmd)
+if ! handleCmd; then
+    dir=$(find . -type d -name node_modules -prune -o -type d -print | fzf --prompt="Select directory: ")
+    if [[ -n "$dir" ]]; then
+        cd "$dir" && handleCmd
+    fi
+fi
