@@ -134,13 +134,21 @@ cd "${DOTFILES_PATH}" || exit 1
 
 # ── packages ─────────────────────────────────────────────────────────────────
 
-command -v apt &>/dev/null && . "${DOTFILES_PATH}/setup-apt.sh"
-command -v brew &>/dev/null && . "${DOTFILES_PATH}/setup-brew.sh"
-[ "${System}" == "linux" ] && command -v nix &>/dev/null && . "${DOTFILES_PATH}/nix/install.sh"
+if command -v apt &>/dev/null; then
+    . "${DOTFILES_PATH}/setup-apt.sh" || error "Failed to setup apt packages"
+fi
+
+if command -v brew &>/dev/null; then
+    . "${DOTFILES_PATH}/setup-brew.sh" || error "Failed to setup brew packages"
+fi
+
+if [ "${System}" == "linux" ] && command -v nix &>/dev/null; then
+    . "${DOTFILES_PATH}/nix/install.sh" || error "Failed to setup nix"
+fi
 
 # ── tools ────────────────────────────────────────────────────────────────────
 
-. "${DOTFILES_PATH}/setup-tools.sh"
+. "${DOTFILES_PATH}/setup-tools.sh" || error "Failed to setup tools"
 
 # ── fonts ────────────────────────────────────────────────────────────────────
 
