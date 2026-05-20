@@ -1,7 +1,3 @@
-# ------
-# name: op.sh
-# author: Deve
-# date: 2025-09-10
-# ------
+#! /usr/bin/env bash
 
 command -v fzf && command -v open && open $(fzf)

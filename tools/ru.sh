@@ -1,11 +1,5 @@
 #! /usr/bin/env bash
 
-# ------
-# name: ru.sh
-# author: Deve
-# date: 2022-07-25
-# ------
-
 set -e
 set -o pipefail
 
