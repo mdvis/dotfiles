@@ -37,3 +37,8 @@
 # taskwarrior {
     alias tku="taskwarrior-tui"
 # }
+
+# Copilot {
+    alias occ="ollama launch claude --model qwen3.5"
+    alias ohm="ollama launch hermes --model qwen3.5"
+# }
