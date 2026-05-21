@@ -39,6 +39,11 @@
 # }
 
 # Copilot {
-    alias occ="ollama launch claude --model qwen3.5"
-    alias ohm="ollama launch hermes --model qwen3.5"
+    alias occq="ollama launch claude --model qwen3.5"
+    alias ohmq="ollama launch hermes --model qwen3.5"
+    alias opq="ollama launch pi --model qwen3.5"
+
+    alias occg="ollama launch claude --model gemma4"
+    alias ohmg="ollama launch hermes --model gemma4"
+    alias opg="ollama launch pi --model gemma4"
 # }
