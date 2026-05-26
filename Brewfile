@@ -1,6 +1,7 @@
 tap "derailed/k9s"
 tap "lifedever/tap"
 tap "ybeapps/sourcegit"
+brew "age"
 brew "openssl@3"
 brew "aria2"
 brew "atuin"
