@@ -53,3 +53,6 @@ export HUSKY=0 # Disables all Git hooks
 # husky end
 
 # other tools end
+
+# opencode
+export PATH=/Users/mdvis/.opencode/bin:$PATH
