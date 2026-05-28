@@ -40,6 +40,7 @@ with pkgs;[
   uv
   vscode
   wezterm
+  wireshark
   wpsoffice-cn
   yazi
   zoxide

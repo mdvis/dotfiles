@@ -79,7 +79,6 @@ tomboy-ng
 uncrustify
 universal-ctags
 vim-nox
-# wireshark
 yamllint
 zoxide
 zsh
