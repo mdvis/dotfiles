@@ -43,5 +43,4 @@ with pkgs;[
   wireshark
   wpsoffice-cn
   yazi
-  zoxide
 ]

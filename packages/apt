@@ -33,7 +33,6 @@ git-lfs
 gitlint
 gnupg
 goaccess
-goldendict-ng
 hdparm
 highlight
 httpie
@@ -53,7 +52,6 @@ meld
 mousepad
 mpv
 nemo
-neovim
 network-manager
 openssl
 pandoc
