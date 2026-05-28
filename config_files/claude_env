@@ -5,9 +5,9 @@ openrouter() {
   export ANTHROPIC_AUTH_TOKEN=$OPENROUTER_KEY
   export ANTHROPIC_BASE_URL=https://openrouter.ai/api
 
-  export CURRENT_MODEL_OPUS=nvidia/nemotron-3-super-120b-a12b:free
-  export CURRENT_MODEL_SONNET=nvidia/nemotron-3-super-120b-a12b:free
-  export CURRENT_MODEL_HAIKU=nvidia/nemotron-3-super-120b-a12b:free
+  export CURRENT_MODEL_OPUS=poolside/laguna-m.1:free
+  export CURRENT_MODEL_SONNET=poolside/laguna-m.1:free
+  export CURRENT_MODEL_HAIKU=poolside/laguna-m.1:free
 
   export ANTHROPIC_MODEL=$CURRENT_MODEL_OPUS
 
@@ -35,4 +35,4 @@ localmodel(){
   export CLAUDE_CODE_SUBAGENT_MODEL=$CURRENT_MODEL_OPUS
 }
 
-localmodel
+openrouter
