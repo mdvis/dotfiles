@@ -29,8 +29,9 @@
     };
 
     general = import ./modules/linux.nix { inherit pkgs; };
+    sway = import ./modules/sway.nix { inherit pkgs; };
 
-    all-pkgs = general;
+    all-pkgs = general ++ sway;
   in {
     packages.all-pkgs = pkgs.symlinkJoin {
       name = "all-pkgs";

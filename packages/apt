@@ -24,7 +24,6 @@ ffmpegthumbnailer
 filezilla
 fio
 flameshot
-foot
 fzf
 gcc
 gh
@@ -35,7 +34,6 @@ gitlint
 gnupg
 goaccess
 goldendict-ng
-grim
 hdparm
 highlight
 httpie
@@ -43,7 +41,6 @@ hwinfo
 ignition
 imagemagick
 jq
-kanshi
 keepassxc
 libnss3
 libvips-dev
@@ -52,7 +49,6 @@ libvips-tools
 libvips42t64
 libxml2
 logisim
-mako-notifier
 meld
 mousepad
 mpv
@@ -67,20 +63,14 @@ qbittorrent
 qpdf
 remmina
 ripgrep
-rofi
 samba
 shellcheck
 shfmt
 silversearcher-ag
-slurp
 smartmontools
 sqlfluff
 strace
 stress-ng
-sway
-swaybg
-swayidle
-swaylock
 syncthing
 thunderbird
 timeshift
@@ -89,11 +79,7 @@ tomboy-ng
 uncrustify
 universal-ctags
 vim-nox
-waybar
 # wireshark
-wl-clipboard
-xdg-desktop-portal-gtk
-xdg-desktop-portal-wlr
 yamllint
 zoxide
 zsh

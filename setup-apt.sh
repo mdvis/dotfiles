@@ -10,19 +10,20 @@ set -e
 set -o pipefail
 
 DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
-APT_PACKAGES_FILE="${DOTFILES_PATH}/packages/apt"
 
-if [[ ! -f "${APT_PACKAGES_FILE}" ]]; then
-    echo "Warning: ${APT_PACKAGES_FILE} not found, skipping apt packages installation"
-    exit 0
-fi
+install_from_list() {
+    local list_file="$1"
+    [[ ! -f "${list_file}" ]] && return
+    while read -r line; do
+        app=$(echo "$line" | xargs)
+        [[ -z "$app" || "$app" =~ ^# ]] && continue
+        sudo apt install -y "$app" || {
+            echo "Warning: Failed to install ${app}"
+        }
+    done <"${list_file}"
+}
 
 echo "------------ apt start ------------"
-while read -r line; do
-    app=$(echo "$line" | xargs)
-    [[ -z "$app" || "$app" =~ ^# ]] && continue
-    sudo apt install -y "$app" || {
-        echo "Warning: Failed to install ${app}"
-    }
-done <"${APT_PACKAGES_FILE}"
+install_from_list "${DOTFILES_PATH}/packages/apt"
+install_from_list "${DOTFILES_PATH}/packages/sway"
 echo "------------  apt end  ------------"
