@@ -1,0 +1,5 @@
+os:
+  edit: 'nvim {{filename}}'
+  editAtLine: 'nvim +{{line}} {{filename}}'
+  openCommand: 'nvim {{filename}}'
+  openDirInEditor: 'nvim {{dir}}'
