@@ -126,7 +126,7 @@ install_vim() {
 mkdir -p "${LOCAL_BIN_PATH}"
 mkdir -p "${CONFIG_PATH}"
 mkdir -p "${SSH_PATH}"
-mkdir -p "${HOME}/.swp" "${HOME}/.backup" "${HOME}/.undo"
+mkdir -p "${HOME}/.swp/nvim" "${HOME}/.swp/vim" "${HOME}/.backup/nvim" "${HOME}/.backup/vim" "${HOME}/.undo/nvim" "${HOME}/.undo/vim"
 
 # ── sync repo ────────────────────────────────────────────────────────────────
 

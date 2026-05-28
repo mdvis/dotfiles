@@ -66,13 +66,13 @@ local function ensure_dir(path)
 end
 
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-    vim.opt.backupdir = "c:\\backup\\\\"
-    vim.opt.directory = "c:\\swp\\\\"
-    vim.opt.undodir = "c:\\undo\\\\"
+    vim.opt.backupdir = "c:\\backup\\nvim\\\\"
+    vim.opt.directory = "c:\\swp\\nvim\\\\"
+    vim.opt.undodir = "c:\\undo\\nvim\\\\"
 else
-    local backup_dir = vim.fn.expand("~/.backup//")
-    local swp_dir = vim.fn.expand("~/.swp//")
-    local undo_dir = vim.fn.expand("~/.undo//")
+    local backup_dir = vim.fn.expand("~/.backup/nvim//")
+    local swp_dir = vim.fn.expand("~/.swp/nvim//")
+    local undo_dir = vim.fn.expand("~/.undo/nvim//")
 
     ensure_dir(backup_dir)
     ensure_dir(swp_dir)
