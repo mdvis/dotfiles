@@ -2,7 +2,6 @@
 
 with pkgs;[
   atuin
-  colima
   cspell
   dbgate
   djlint
@@ -31,7 +30,6 @@ with pkgs;[
   prettier
   ruff
   rustscan
-  simplescreenrecorder
   sourcegit
   starship
   stretchly
