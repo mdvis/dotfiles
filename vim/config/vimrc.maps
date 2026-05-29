@@ -43,6 +43,11 @@ scriptencoding utf-8
         nmap <silent> <leader>gs :G<CR>
     " }
 
+    " {
+        " s{char}{char} to move to {char}{char}
+        nmap s <Plug>(easymotion-overwin-f2)
+    " }
+
     " TPL {
         nmap <silent> <leader><leader>t :call SetTpl()<CR>
     " }

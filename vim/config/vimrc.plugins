@@ -50,6 +50,10 @@ scriptencoding utf-8
             Plug 'airblade/vim-rooter'
         " }
 
+        " Navigation {
+            Plug 'easymotion/vim-easymotion'
+        " }
+
         " Syntax and Fix {
             Plug 'dense-analysis/ale'
         " }
