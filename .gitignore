@@ -21,3 +21,14 @@ nix/result-*
 
 # Media
 **/watch_later
+
+# 临时文件
+*.log
+*.tmp
+
+# 备份文件
+*.bak
+*~
+
+# 用户特定配置
+local-config.sh
