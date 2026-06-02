@@ -6,6 +6,7 @@ checkstyle
 clamav
 copyq
 curl
+distrobox
 docker-buildx
 docker-clean
 docker-cli
