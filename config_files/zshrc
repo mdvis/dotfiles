@@ -56,3 +56,7 @@ export HUSKY=0 # Disables all Git hooks
 
 # opencode
 export PATH=/Users/mdvis/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/mdvis/.local/bin:$PATH"
