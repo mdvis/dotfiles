@@ -1,0 +1,6 @@
+refactor(NCDLogin):重构样式类名和嵌套选择器
+
+- 将容器类名从 .container 重命名为 .ncdlogin-page
+- 所有嵌套选择器改为 .ncdlogin-page .子元素 模式
+- 将全局样式选择器移至页面作用域内
+- 保持页面功能不变，仅优化样式代码组织
