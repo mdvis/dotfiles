@@ -10,7 +10,7 @@ style = "Regular"
 size = 16.0
 
 [terminal.shell]
-program = "/usr/local/bin/zsh"
+program = "/usr/local/bin/zellij"
 
 [cursor.style]
 shape = "Block"
