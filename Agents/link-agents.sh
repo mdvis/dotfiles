@@ -13,6 +13,7 @@ declare -A TOOLS=(
     ["codex"]="$HOME/.codex"
     ["workbuddy"]="$HOME/.workbuddy"
     ["opencode"]="$HOME/.opencode"
+    ["hermes"]="$HOME/.hermes"
 )
 
 # 颜色输出
@@ -39,7 +40,7 @@ create_single_symlink() {
     local source_path=$1
     local link_path=$2
     local item_name=$3
-    
+
     # 如果链接已存在
     if [ -L "$link_path" ]; then
         local current_target=$(readlink "$link_path")
@@ -76,45 +77,45 @@ create_single_symlink() {
 create_symlinks() {
     local tool_name=$1
     local target_dir=$2
-    
+
     log_info "处理工具: $tool_name"
-    
+
     # 检查目标目录是否存在，不存在则创建
     if [ ! -d "$target_dir" ]; then
         log_warn "目标目录不存在，正在创建: $target_dir"
         mkdir -p "$target_dir"
     fi
-    
+
     # 遍历源目录中的顶级目录 (agents, hooks, skills)
     for category_dir in "$SOURCE_DIR"/*; do
         # 跳过 .DS_Store 等隐藏文件和普通文件
         if [[ "$(basename "$category_dir")" == .* ]] || [ ! -d "$category_dir" ]; then
             continue
         fi
-        
+
         local category_name=$(basename "$category_dir")
         local target_category_dir="$target_dir/$category_name"
-        
+
         log_info "  处理分类: $category_name"
-        
+
         # 确保目标分类目录存在
         mkdir -p "$target_category_dir"
-        
+
         # 遍历分类目录下的所有项目
         for item in "$category_dir"/*; do
             # 跳过 .DS_Store 等隐藏文件
             if [[ "$(basename "$item")" == .* ]]; then
                 continue
             fi
-            
+
             local item_name=$(basename "$item")
             local link_path="$target_category_dir/$item_name"
-            
+
             # 创建软链接
             create_single_symlink "$item" "$link_path" "$category_name/$item_name"
         done
     done
-    
+
     echo
 }
 
@@ -153,10 +154,10 @@ main() {
         log_error "源目录不存在: $SOURCE_DIR"
         exit 1
     fi
-    
+
     log_info "源目录: $SOURCE_DIR"
     echo
-    
+
     # 解析命令行参数
     if [ $# -eq 0 ]; then
         # 交互式模式
@@ -164,12 +165,12 @@ main() {
         list_tools
         echo
         read -p "请输入工具名称: " -r
-        
+
         if [ -z "$REPLY" ]; then
             log_error "未选择任何工具"
             exit 1
         fi
-        
+
         if [[ "$REPLY" == "all" ]]; then
             for tool in "${!TOOLS[@]}"; do
                 create_symlinks "$tool" "${TOOLS[$tool]}"
@@ -186,33 +187,33 @@ main() {
     else
         # 命令行参数模式
         case "$1" in
-            -h|--help)
-                show_usage
-                exit 0
-                ;;
-            -l|--list)
-                list_tools
-                exit 0
-                ;;
-            -a|--all)
-                for tool in "${!TOOLS[@]}"; do
+        -h | --help)
+            show_usage
+            exit 0
+            ;;
+        -l | --list)
+            list_tools
+            exit 0
+            ;;
+        -a | --all)
+            for tool in "${!TOOLS[@]}"; do
+                create_symlinks "$tool" "${TOOLS[$tool]}"
+            done
+            ;;
+        *)
+            for tool in "$@"; do
+                if [ -n "${TOOLS[$tool]:-}" ]; then
                     create_symlinks "$tool" "${TOOLS[$tool]}"
-                done
-                ;;
-            *)
-                for tool in "$@"; do
-                    if [ -n "${TOOLS[$tool]:-}" ]; then
-                        create_symlinks "$tool" "${TOOLS[$tool]}"
-                    else
-                        log_error "未知工具: $tool"
-                        echo "使用 --list 查看支持的工具"
-                        exit 1
-                    fi
-                done
-                ;;
+                else
+                    log_error "未知工具: $tool"
+                    echo "使用 --list 查看支持的工具"
+                    exit 1
+                fi
+            done
+            ;;
         esac
     fi
-    
+
     log_info "完成！"
 }
 
