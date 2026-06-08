@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # 源目录
-SOURCE_DIR="$HOME/.dotfiles/Agents"
+SOURCE_DIR="$HOME/.dotfiles/agents"
 
 # 定义目标工具及其配置目录（统一使用 ~/.工具名 的格式）
 declare -A TOOLS=(
