@@ -11,7 +11,7 @@ scriptencoding utf-8
     " }
 
     " Fzf {
-        nmap <silent> <C-p> :Files<CR>
+        nnoremap <silent> <C-p> :Files<CR>
         nnoremap <silent> <leader>b :Buffers<CR>
         nnoremap <silent> <leader>R :Rg<CR>
     " }
@@ -64,8 +64,8 @@ scriptencoding utf-8
         nnoremap k gk
         nnoremap <leader>h ^
         nnoremap <leader>l g_
-        nnoremap <leader>cc :set cursorcolumn!<CR>
+        nnoremap <leader>vc :set cursorcolumn!<CR>
         " Restore screen redraw (was overridden by <C-l> window nav)
-        nnoremap <leader>cl :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
+        nnoremap <leader>vr :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
     " }
 " }
