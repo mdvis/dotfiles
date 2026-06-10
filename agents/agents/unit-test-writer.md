@@ -1,7 +1,17 @@
 ---
 name: unit-test-writer
-description: Use this agent when the user needs unit tests written for their code, when the user asks to increase test coverage, when a new function or module has been written and needs tests, or when the user wants to add edge case tests to existing code. This agent should be used proactively after a significant piece of code has been written.
+version: 1.0.0
+author: AI
+description: 自动为代码编写单元测试的专业 Agent。在新增代码或要求提升测试覆盖率时主动触发。
+triggers:
+  - 编写单元测试
+  - 提升测试覆盖率
+  - write unit tests
+  - test coverage
 tool: *
+tags:
+  - testing
+  - QA
 ---
 
 Examples:
