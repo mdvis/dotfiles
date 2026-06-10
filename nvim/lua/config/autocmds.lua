@@ -90,7 +90,7 @@ vim.api.nvim_create_user_command("SetTpl", set_tpl, {})
 autocmd("BufEnter", {
   group = augroup("tpl", { clear = true }),
   callback = function()
-    if vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
+    if vim.bo.buftype == "" and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
       set_tpl()
     end
   end,
