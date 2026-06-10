@@ -1,12 +1,24 @@
 ---
 name: generate-operation-manual
-description: "Generates a Chinese illustrated operation manual (操作手册.md) for a web app. Combines code analysis with real Playwright browser screenshots. Triggered by: generate operation manual, 生成操作手册, 生成界面手册, 生成使用手册."
-agent_created: true
+version: 1.0.0
+author: AI (agent_created)
+description: 生成 Web 应用的中文图文操作手册，结合代码分析与 Playwright 自动化截图。
+triggers:
+  - 生成操作手册
+  - 生成界面手册
+  - 生成使用手册
+  - generate operation manual
+dependencies:
+  - playwright-cli
+tags:
+  - documentation
+  - automation
+  - playwright
 ---
 
 # 操作手册生成 Skill
 
-## 用途
+## 🎯 功能说明
 
 针对任意 Web 项目，输入「目标系统地址 + 登录凭据 + 页面路由列表」，自动完成：
 
@@ -14,7 +26,7 @@ agent_created: true
 2. Playwright 逐页抓取截图与 UI 数据
 3. 生成中文操作手册 Markdown 文件（`操作手册.md`）
 
-## 触发场景
+## 🚀 触发场景
 
 当用户提供以下信息并希望生成操作手册时触发：
 
@@ -22,7 +34,7 @@ agent_created: true
 - 登录凭据（用户名 / 密码）
 - 一或多个页面路由（如 `/sort-rule`、`/chronic-disease`）
 
-## 参数收集
+## 📥 输入参数
 
 如果用户没有全部提供，按以下顺序提问（每次只问缺失的部分，避免冗长）：
 
@@ -34,7 +46,7 @@ agent_created: true
 | `PAGES` | 目标页面路由列表（可多个，换行分隔） |
 | `OUTPUT_DIR` | 可选，手册输出目录，默认为当前工作目录 |
 
-## 执行步骤
+## 🔄 执行流程
 
 新建一个以当前`日期_时分`为名称的目录，本次所有产物均放在新建的目录中(图片文档等)
 
@@ -109,7 +121,7 @@ playwright-cli close
 - 截图存放于 `<OUTPUT_DIR>/操作手册图片/`
 - 确保 Markdown 中的截图引用为相对路径
 
-## 注意事项
+## ⚠️ 注意事项
 
 - SPA 页面初次加载后 `document.title` 可能仍为框架默认标题，需 sleep 3-5 秒后重试
 - `layout: false` 的路由（表单设计器等）加载更慢，sleep 5-6 秒，标题可能始终为默认值
@@ -118,6 +130,6 @@ playwright-cli close
 - 手册面向操作人员，全部使用自然语言，不写代码
 - 内容必须基于实际抓取数据 + 代码分析的交叉验证，不得凭空编造
 
-## 参考资料
+## 📚 参考资料
 
 详细 Playwright 命令示例见 → `references/playwright-commands.md`

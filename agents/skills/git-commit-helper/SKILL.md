@@ -1,20 +1,24 @@
 ---
 name: git-commit-helper
+version: 1.0.0
+author: einverne
 description: 根据 git diff 生成符合 Conventional Commits 规范的提交信息
 triggers:
   - 提交
   - commit
-version: 1.0.0
-author: einverne
+dependencies: []
+tags:
+  - git
+  - automation
 ---
 
 # Git 提交信息生成助手
 
-## 功能说明
+## 🎯 功能说明
 
 分析 git 暂存区的代码变动，生成符合 Conventional Commits 规范的提交信息。
 
-## Conventional Commits 规范
+## 📚 Conventional Commits 规范
 
 提交信息格式：`<type>(<scope>): <subject>`
 
@@ -29,7 +33,7 @@ author: einverne
 - test: 测试相关
 - chore: 构建工具或辅助工具的变动
 
-## 执行流程
+## 🔄 执行流程
 
 1. 执行 `git diff` 查看暂存区变更
 2. 分析变更内容的目的，将不同目的的内容（一次内容尽量少）分多次提交
@@ -42,7 +46,7 @@ author: einverne
 4. 提交按照 ‘type(scope):subject‘ 格式来
 5. 所以内容均使用汉语
 
-## 输出格式
+## 📤 输出格式
 
 ```
 type(scope):subject
@@ -52,9 +56,9 @@ type(scope):subject
 [可选的 footer，如 BREAKING CHANGE、关闭的 issue]
 ```
 
-## 质量标准
+## ⚠️ 质量标准
 
-- 严格遵守 SPR 原则
+- 严格遵守 SRP 原则
 - subject 使用动词开头，不超过 50 个字符
 - subject 不以句号结尾
 - body 每行不超过 72 个字符
