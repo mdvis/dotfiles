@@ -14,7 +14,6 @@
   inputs = {
     nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs?ref=nixos-unstable&shallow=1";
     flake-utils.url = "github:numtide/flake-utils";
-    elephant.url = "github:abenz1267/elephant";
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }@inputs:
