@@ -193,13 +193,13 @@ return {
         local bufnr = args.buf
         local ft = vim.bo[bufnr].filetype
         
-        -- Map filetypes to LSP servers
+        -- Map filetypes to LSP servers (string or list of strings)
         local ft_to_server = {
           lua = "lua_ls",
-          typescript = "ts_ls",
-          typescriptreact = "ts_ls",
-          javascript = "ts_ls",
-          javascriptreact = "ts_ls",
+          typescript = { "ts_ls", "eslint" },
+          typescriptreact = { "ts_ls", "eslint" },
+          javascript = { "ts_ls", "eslint" },
+          javascriptreact = { "ts_ls", "eslint" },
           python = "pyright",
           go = "gopls",
           rust = "rust_analyzer",
@@ -213,10 +213,16 @@ return {
           yaml = "yamlls",
           yml = "yamlls",
         }
-        
-        local server = ft_to_server[ft]
-        if server then
-          vim.lsp.enable(server)
+
+        local entry = ft_to_server[ft]
+        if entry then
+          if type(entry) == "string" then
+            vim.lsp.enable(entry)
+          else
+            for _, s in ipairs(entry) do
+              vim.lsp.enable(s)
+            end
+          end
         end
       end,
     })
