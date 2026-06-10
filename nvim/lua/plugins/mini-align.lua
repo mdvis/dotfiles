@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.align",
-  lazy = false,  -- 立即加载，确保快捷键生效
+  keys = { "ga", "gA" },
   config = function()
     require("mini.align").setup({
       mappings = {
