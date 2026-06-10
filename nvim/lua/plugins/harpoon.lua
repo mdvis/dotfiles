@@ -4,7 +4,15 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local harpoon = require("harpoon")
-    harpoon:setup()
+    harpoon:setup({
+      settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+        key = function()
+          return vim.loop.cwd()
+        end,
+      },
+    })
   end,
   keys = {
     {
@@ -23,12 +31,5 @@ return {
       end,
       desc = "Toggle Harpoon menu",
     },
-  },
-  settings = {
-    save_on_toggle = true,
-    sync_on_ui_close = true,
-    key = function()
-      return vim.loop.cwd()
-    end,
   },
 }
