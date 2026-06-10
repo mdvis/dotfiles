@@ -8,9 +8,7 @@ return {
       background = { light = "latte", dark = "mocha" },
       transparent_background = false,
       integrations = {
-        nvimtree = true,
         mini = true,
-        dap = true,
         native_lsp = { enabled = true },
       },
     })
