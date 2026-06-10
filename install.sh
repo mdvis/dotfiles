@@ -116,17 +116,11 @@ install_fonts() {
     success "Fonts installed!"
 }
 
-install_vim() {
-    bash "${DOTFILES_PATH}/vim/install.sh"
-    bash "${DOTFILES_PATH}/nvim/install.sh"
-}
-
 # ── init dirs ────────────────────────────────────────────────────────────────
 
 mkdir -p "${LOCAL_BIN_PATH}"
 mkdir -p "${CONFIG_PATH}"
 mkdir -p "${SSH_PATH}"
-mkdir -p "${HOME}/.swp/nvim" "${HOME}/.swp/vim" "${HOME}/.backup/nvim" "${HOME}/.backup/vim" "${HOME}/.undo/nvim" "${HOME}/.undo/vim"
 
 # ── sync repo ────────────────────────────────────────────────────────────────
 
@@ -158,11 +152,5 @@ install_fonts
 # ── dotfiles ─────────────────────────────────────────────────────────────────
 
 handler "${DOTFILES_PATH}/ssh" "${SSH_PATH}" "f" || error "Failed to link ssh!"
-handler "${DOTFILES_PATH}/config_files" "${HOME}/." "f" || error "Failed to link config files!"
-handler "${DOTFILES_PATH}/config_dirs" "${CONFIG_PATH}" "d" || error "Failed to link config dirs!"
-
-# ── vim / nvim ───────────────────────────────────────────────────────────────
-
-install_vim
 
 success "All done!"
