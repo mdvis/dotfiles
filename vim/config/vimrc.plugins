@@ -296,6 +296,7 @@ scriptencoding utf-8
 
     " Rooter {
         let g:rooter_patterns = [
+                    \ '.git', '.git/',
                     \ 'package.json', 'setup.py', 'pyproject.toml',
                     \ 'requirements.txt', 'MANIFEST.in', 'manage.py',
                     \ 'pom.xml', 'build.gradle', 'go.mod', 'go.sum', 'Gemfile',
