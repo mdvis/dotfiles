@@ -13,7 +13,7 @@ return {
         { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
         { "<leader>fe", "<cmd>Telescope emoji<cr>", desc = "Emoji" },
-        { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Emoji" },
+        { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
     },
     config = function()
         local telescope = require("telescope")
