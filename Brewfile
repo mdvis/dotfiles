@@ -252,8 +252,6 @@ cask "openinterminal-lite"
 cask "openvpn-connect"
 # AI assistant and chatbot powered by Alibaba's Qwen model
 cask "qianwen"
-# Instant messaging tool
-cask "qq"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Screenshot measurement and annotation tool
