@@ -1,5 +1,3 @@
-tap "darrylmorley/whatcable"
-tap "lifedever/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -282,8 +280,6 @@ cask "wechat"
 cask "wechatwork"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# Menu bar app for USB-C cable diagnostics
-cask "whatcable"
 # All-in-one office service platform in Chinese
 cask "wpsoffice-cn"
 # Multi-platform note application
