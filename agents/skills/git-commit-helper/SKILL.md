@@ -16,7 +16,7 @@ tags:
 
 ## 🎯 功能说明
 
-分析 git 暂存区的代码变动，生成符合 Conventional Commits 规范的提交信息。
+分析 git 工作区/暂存区的代码变动，根据变更的内容参照 SPR 原则分拆，然后生成符合 Conventional Commits 规范的提交信息并提交。
 
 ## 📚 Conventional Commits 规范
 
@@ -43,8 +43,8 @@ tags:
 - 生成简洁明了的 subject
 - 如有必要，添加详细的 body 和 footer
 
-4. 提交按照 ‘type(scope):subject‘ 格式来
-5. 所以内容均使用汉语
+4. 提交信息格式按照 ‘type(scope):subject‘ 格式
+5. 所有内容均使用汉语
 
 ## 📤 输出格式
 
@@ -58,7 +58,7 @@ type(scope):subject
 
 ## ⚠️ 质量标准
 
-- 严格遵守 SRP 原则
+- 严格遵守 SRP 原则，分多次提交
 - subject 使用动词开头，不超过 50 个字符
 - subject 不以句号结尾
 - body 每行不超过 72 个字符

@@ -26,8 +26,8 @@ playwright-cli snapshot
 # 查看快照确认 ref（示例：e12 为用户名框，e13 为密码框，e14 为登录按钮）
 
 # 填写用户名 / 密码
-playwright-cli fill <username-ref> "May"
-playwright-cli fill <password-ref> "b5432!qQ"
+playwright-cli fill <username-ref> "name"
+playwright-cli fill <password-ref> "pass"
 
 # 点击登录
 playwright-cli click <login-btn-ref>
