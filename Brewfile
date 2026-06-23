@@ -15,7 +15,7 @@ brew "checkstyle"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima", restart_service: :changed
+brew "colima"
 # Spell checker for code
 brew "cspell"
 # Reimplementation of ctags(1)
@@ -226,6 +226,8 @@ cask "keepassxc"
 cask "keepingyouawake"
 # File archiver
 cask "keka"
+# Free cross-platform office suite, fresh version
+cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Trims video and audio files losslessly
@@ -250,8 +252,6 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
-# AI assistant and chatbot powered by Alibaba's Qwen model
-cask "qianwen"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Screenshot measurement and annotation tool
@@ -282,3 +282,5 @@ cask "wezterm"
 cask "wpsoffice-cn"
 # Multi-platform note application
 cask "youdaonote"
+# Tencent AI Assistant with Hunyuan and DeepSeek LLMs
+cask "yuanbao"
