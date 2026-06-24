@@ -13,6 +13,7 @@ declare -A TOOLS=(
     ["codex"]="$HOME/.codex"
     ["workbuddy"]="$HOME/.workbuddy"
     ["opencode"]="$HOME/.opencode"
+    ["codebuddy"]="$HOME/.codebuddy"
     ["hermes"]="$HOME/.hermes"
 )
 
