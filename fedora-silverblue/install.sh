@@ -33,6 +33,11 @@ if [[ ! $confirm =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
+# 检查是否是继续安装
+if [[ "$1" == "--continue" ]]; then
+    continue_install
+fi
+
 # 步骤 1: 基础系统
 echo ""
 echo -e "${BLUE}=== 步骤 1/5: 基础系统层安装 ===${NC}"
@@ -58,32 +63,27 @@ continue_install() {
     echo ""
     echo -e "${BLUE}=== 继续安装 ===${NC}"
     echo ""
-    
+
     # 步骤 2: Flatpak
     echo -e "${BLUE}=== 步骤 2/5: Flatpak 应用安装 ===${NC}"
     bash "$SCRIPT_DIR/02-flatpak-apps.sh"
-    
+
     # 步骤 3: Toolbox
     echo ""
     echo -e "${BLUE}=== 步骤 3/5: Toolbox 容器配置 ===${NC}"
     bash "$SCRIPT_DIR/03-toolbox-setup.sh"
-    
+
     # 步骤 4: Mise
     echo ""
     echo -e "${BLUE}=== 步骤 4/5: Mise 配置 ===${NC}"
     bash "$SCRIPT_DIR/04-mise-setup.sh"
-    
+
     # 步骤 5: 后续配置
     echo ""
     echo -e "${BLUE}=== 步骤 5/5: 后续配置 ===${NC}"
     bash "$SCRIPT_DIR/05-post-install.sh"
-    
+
     echo ""
     echo -e "${GREEN}🎉 所有安装步骤完成!${NC}"
     echo ""
 }
-
-# 检查是否是继续安装
-if [[ "$1" == "--continue" ]]; then
-    continue_install
-fi
