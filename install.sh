@@ -70,26 +70,6 @@ getDir() {
     /usr/bin/find "$1" -maxdepth 1 -mindepth 1 -type d
 }
 
-handler() {
-    local path_name="$1"
-    local target_dir="$2"
-    local typ="$3"
-    local dir_list file
-
-    if [[ "${typ}" == "f" ]]; then
-        dir_list=$(getFile "${path_name}")
-    else
-        dir_list=$(getDir "${path_name}")
-    fi
-
-    for i in ${dir_list}; do
-        file=$(basename "$i")
-        backup "${target_dir}${file}"
-        ln_if "${path_name}/${file}" "${target_dir}${file}"
-        success "Link ${file}!"
-    done
-}
-
 syncRepo() {
     local repo_path="$1"
     local repo_uri="$2"
@@ -141,16 +121,8 @@ if [ "${System}" == "linux" ] && command -v nix &>/dev/null; then
     . "${DOTFILES_PATH}/nix/install.sh" || error "Failed to setup nix"
 fi
 
-# ── tools ────────────────────────────────────────────────────────────────────
-
-. "${DOTFILES_PATH}/setup-tools.sh" || error "Failed to setup tools"
-
 # ── fonts ────────────────────────────────────────────────────────────────────
 
 install_fonts
-
-# ── dotfiles ─────────────────────────────────────────────────────────────────
-
-handler "${DOTFILES_PATH}/ssh" "${SSH_PATH}" "f" || error "Failed to link ssh!"
 
 success "All done!"
