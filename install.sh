@@ -14,10 +14,7 @@ APP_NAME="dotfiles"
 REPO_URI="https://github.com/mdvis/${APP_NAME}.git"
 DOTFILES_PATH="${HOME}/.${APP_NAME}"
 
-CONFIG_PATH="${HOME}/.config/"
-LOCAL_BIN_PATH="${HOME}/.local/bin/"
 LOCAL_FONTS_PATH="${HOME}/.local/share/fonts/"
-SSH_PATH="${HOME}/.ssh/"
 MAC_FONTS_PATH="${HOME}/Library/Fonts/"
 
 System="$(uname -s | tr '[:upper:]' '[:lower:]')"
@@ -39,35 +36,6 @@ success() {
 error() {
     msg "${Red}[✘]${Color_off} ${1}"
     exit 1
-}
-
-ln_if() {
-    if [ -e "$1" ]; then
-        ln -sf "$1" "$2"
-    fi
-}
-
-backup() {
-    local list time
-    list="$*"
-    time=$(date +%s)
-    for i in $list; do
-        if [[ -L "${i}" ]]; then
-            rm "${i}"
-            success "Remove symlink ${i}!"
-        elif [[ -e "${i}" ]]; then
-            mv "${i}" "${i}.${time}.backup"
-            success "Backup ${i} done!"
-        fi
-    done
-}
-
-getFile() {
-    /usr/bin/find "$1" -maxdepth 1 -type f
-}
-
-getDir() {
-    /usr/bin/find "$1" -maxdepth 1 -mindepth 1 -type d
 }
 
 syncRepo() {
@@ -95,12 +63,6 @@ install_fonts() {
     fi
     success "Fonts installed!"
 }
-
-# ── init dirs ────────────────────────────────────────────────────────────────
-
-mkdir -p "${LOCAL_BIN_PATH}"
-mkdir -p "${CONFIG_PATH}"
-mkdir -p "${SSH_PATH}"
 
 # ── sync repo ────────────────────────────────────────────────────────────────
 
