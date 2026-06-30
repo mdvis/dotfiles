@@ -69,9 +69,16 @@ install_fonts() {
 syncRepo "${DOTFILES_PATH}" "${REPO_URI}"
 cd "${DOTFILES_PATH}" || exit 1
 
+# ── fonts ────────────────────────────────────────────────────────────────────
+
+install_fonts
+
 # ── packages ─────────────────────────────────────────────────────────────────
 
-if command -v apt &>/dev/null; then
+if command -v pacman &>/dev/null; then
+    . "${DOTFILES_PATH}/setup-pacman.sh" || error "Failed to setup pacman packages"
+
+elif command -v apt &>/dev/null; then
     . "${DOTFILES_PATH}/setup-apt.sh" || error "Failed to setup apt packages"
 fi
 
@@ -82,9 +89,5 @@ fi
 if [ "${System}" == "linux" ] && command -v nix &>/dev/null; then
     . "${DOTFILES_PATH}/nix/install.sh" || error "Failed to setup nix"
 fi
-
-# ── fonts ────────────────────────────────────────────────────────────────────
-
-install_fonts
 
 success "All done!"
