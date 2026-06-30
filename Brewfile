@@ -210,16 +210,12 @@ cask "calibre"
 cask "dbgate"
 # Posture monitoring app
 cask "dorso"
-# Web browser
-cask "firefox"
 # Free and open-source image editor
 cask "gimp"
 # Web browser
 cask "google-chrome"
 # Testing client for REST, GraphQL, and HTTP APIs
 cask "httpie-desktop"
-# Open-source screen recorder built with web technology
-cask "kap"
 # Password manager app
 cask "keepassxc"
 # Tool to prevent the system from going into sleep mode
@@ -230,8 +226,6 @@ cask "keka"
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Trims video and audio files losslessly
-cask "losslesscut"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Clipboard manager
