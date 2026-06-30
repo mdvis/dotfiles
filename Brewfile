@@ -1,3 +1,4 @@
+tap "lihaoyun6/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -202,6 +203,8 @@ cask "adrive"
 cask "alacritty"
 # Display management tool
 cask "betterdisplay"
+# Screen capturing and editing tool
+cask "bettershot"
 # 3D creation suite
 cask "blender"
 # E-books management software
@@ -216,6 +219,8 @@ cask "gimp"
 cask "google-chrome"
 # Testing client for REST, GraphQL, and HTTP APIs
 cask "httpie-desktop"
+# Free and open-source media player
+cask "iina"
 # Password manager app
 cask "keepassxc"
 # Tool to prevent the system from going into sleep mode
@@ -244,8 +249,12 @@ cask "obsidian"
 cask "ollama-app"
 # Finder Toolbar app to open the current directory in Terminal
 cask "openinterminal-lite"
+# Cross-platform video editor
+cask "openshot-video-editor"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# A lightweight and high-performance screen recorder for macOS.
+cask "lihaoyun6/tap/quickrecorder", trusted: true
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Screenshot measurement and annotation tool
