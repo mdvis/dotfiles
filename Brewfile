@@ -209,6 +209,8 @@ cask "bettershot"
 cask "blender"
 # E-books management software
 cask "calibre"
+# Plain-text editor for web pages, program source codes and more
+cask "coteditor"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
 # Posture monitoring app
