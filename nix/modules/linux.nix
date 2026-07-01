@@ -28,6 +28,7 @@ with pkgs;[
   peazip
   poppler
   prettier
+  protege
   ruff
   rustscan
   sourcegit
