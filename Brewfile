@@ -1,4 +1,3 @@
-tap "lihaoyun6/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -81,16 +80,12 @@ brew "hadolint"
 brew "pkgconf"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
-# CLI email client written in Rust
-brew "himalaya"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# Command-line tool to kill processes listening on a specific port
-brew "killport"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Lazier way to manage everything docker
@@ -131,10 +126,6 @@ brew "opentofu"
 brew "pandoc"
 # Pandoc filter for numbering and cross-referencing
 brew "pandoc-crossref"
-# Tool for managing OCI containers and pods
-brew "podman"
-# Alternative to docker-compose using podman
-brew "podman-compose"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
@@ -149,10 +140,6 @@ brew "redis", restart_service: :changed
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
-# Modern Day Portscanner
-brew "rustscan"
-# 7-Zip is a file archiver with a high compression ratio
-brew "sevenzip"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
@@ -239,8 +226,6 @@ cask "lulu"
 cask "maccy"
 # File system integration
 cask "macfuse"
-# Open-source, KeePass-client and password manager
-cask "macpass"
 # Markdown editor
 cask "mark-text"
 # Visual diff and merge tool
@@ -253,14 +238,8 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # Cross-platform video editor
 cask "openshot-video-editor"
-# Client program for the OpenVPN Access Server
-cask "openvpn-connect"
-# A lightweight and high-performance screen recorder for macOS.
-cask "lihaoyun6/tap/quickrecorder", trusted: true
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# Screenshot measurement and annotation tool
-cask "shottr"
 # PDF viewer designed for reading research papers and technical books
 cask "sioyek"
 # Git GUI client
@@ -273,18 +252,12 @@ cask "tailscale-app"
 cask "telegram-desktop"
 # Utility to switch between applications
 cask "thor"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Free messaging and calling application
 cask "wechat"
-# Messaging and calling application
-cask "wechatwork"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# All-in-one office service platform in Chinese
-cask "wpsoffice-cn"
 # Multi-platform note application
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
