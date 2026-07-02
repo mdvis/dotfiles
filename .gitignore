@@ -1,34 +1,90 @@
-# General
-*.swp
-.DS_Store
-.sync.ffs_db
+# Created by https://www.toptal.com/developers/gitignore/api/vim,homebrew,macos,linux,git
+# Edit at https://www.toptal.com/developers/gitignore?templates=vim,homebrew,macos,linux,git
 
-# Vim
-ftplugin
-plugged
-**/gocomplete.vim
-.netrwhist
-/session
-**/*.log
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
 
-# Nix
-nix/flake.lock
-nix/result
-nix/result-*
-.direnv
-.devenv
-*.derivation
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
 
-# Media
-**/watch_later
+### Homebrew ###
+Brewfile.lock.json
 
-# 临时文件
-*.log
-*.tmp
-
-# 备份文件
-*.bak
+### Linux ###
 *~
 
-# 用户特定配置
-local-config.sh
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+# End of https://www.toptal.com/developers/gitignore/api/vim,homebrew,macos,linux,git
