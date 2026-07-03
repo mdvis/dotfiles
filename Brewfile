@@ -48,8 +48,6 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Terminal JSON viewer
@@ -94,6 +92,8 @@ brew "lazydocker"
 brew "lazygit"
 # Terminal-based SSH manager
 brew "lazyssh"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # GNOME XML library
 brew "libxml2"
 # Utility for directing compilation
@@ -158,6 +158,8 @@ brew "stylua"
 brew "task"
 # Terminal user interface for taskwarrior
 brew "taskwarrior-tui"
+# Extremely fast LaTeX formatter written in Rust
+brew "tex-fmt"
 # Free software distribution for the TeX typesetting system
 brew "texlive"
 # Code-search similar to ack
@@ -176,6 +178,8 @@ brew "vim"
 brew "vips"
 # HTTP, HTTP2, HTTPS, Websocket debugging proxy
 brew "whistle"
+# Python-powered, cross-platform, Unix-gazing shell language and command prompt
+brew "xonsh"
 # Linter for YAML files
 brew "yamllint"
 # Blazing fast terminal file manager written in Rust, based on async I/O
@@ -216,6 +220,8 @@ cask "keepassxc"
 cask "keepingyouawake"
 # File archiver
 cask "keka"
+# Agent-centric IDE with spec-driven development
+cask "kiro"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
@@ -244,6 +250,8 @@ cask "rectangle"
 cask "sioyek"
 # Git GUI client
 cask "sourcegit"
+# System monitor for the menu bar
+cask "stats"
 # Real time file synchronisation software
 cask "syncthing-app"
 # Mesh VPN based on WireGuard
@@ -256,6 +264,8 @@ cask "thor"
 cask "visual-studio-code"
 # Free messaging and calling application
 cask "wechat"
+# Text input app from WeChat team for Chinese users
+cask "wetype"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Multi-platform note application
