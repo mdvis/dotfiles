@@ -52,11 +52,13 @@ cd "${DOTFILES_PATH}" || exit 1
 
 if command -v brew &>/dev/null; then
     . "${DOTFILES_PATH}/setup-brew.sh" || error "Failed to setup brew packages"
+    . "${DOTFILES_PATH}/setup-agent.sh" || error "Failed to setup agent packages"
 fi
 
 if [ "${SYSTEM}" == "linux" ] && command -v apt &>/dev/null && command -v nix &>/dev/null; then
     . "${DOTFILES_PATH}/setup-apt.sh" || error "Failed to setup apt packages"
     . "${DOTFILES_PATH}/nix/install.sh" || error "Failed to setup nix"
+    . "${DOTFILES_PATH}/setup-agent.sh" || error "Failed to setup agent packages"
 fi
 
 success "All done!"
