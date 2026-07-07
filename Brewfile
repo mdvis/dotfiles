@@ -202,6 +202,8 @@ cask "blender"
 cask "calibre"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
 # Posture monitoring app
