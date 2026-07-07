@@ -26,6 +26,7 @@ install_tool "Claude Code" "https://claude.ai/install.sh" bash
 install_tool "Hermes Agent" "https://hermes-agent.nousresearch.com/install.sh" bash
 install_tool "Antigravity CLI" "https://antigravity.google/cli/install.sh" bash
 install_tool "Codex CLI" "https://chatgpt.com/codex/install.sh" sh
+install_tool "OpenClaw" "https://openclaw.ai/install.sh" bash
 
 echo ""
 echo -e "${GREEN}${BOLD}完成!${RESET}"
