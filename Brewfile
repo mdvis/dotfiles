@@ -1,3 +1,4 @@
+tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -242,6 +243,8 @@ cask "macfuse"
 cask "mark-text"
 # Visual diff and merge tool
 cask "meld"
+# Full-featured download manager built with Tauri
+cask "aninsomniacy/motrix-next/motrix-next", trusted: true
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
