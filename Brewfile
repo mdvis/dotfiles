@@ -10,12 +10,14 @@ brew "atuin"
 brew "bash"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# TIFF library and utilities
+brew "libtiff"
 # Check Java source against a coding standard
 brew "checkstyle"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
+brew "colima", restart_service: :changed
 # Spell checker for code
 brew "cspell"
 # Reimplementation of ctags(1)
@@ -48,6 +50,8 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Terminal JSON viewer
@@ -92,8 +96,6 @@ brew "lazydocker"
 brew "lazygit"
 # Terminal-based SSH manager
 brew "lazyssh"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
 # GNOME XML library
 brew "libxml2"
 # Utility for directing compilation
@@ -126,6 +128,8 @@ brew "opentofu"
 brew "pandoc"
 # Pandoc filter for numbering and cross-referencing
 brew "pandoc-crossref"
+# Open-source vector similarity search for Postgres
+brew "pgvector"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
@@ -274,6 +278,8 @@ cask "wezterm"
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
 cask "yuanbao"
+# Mesh VPN client
+cask "zerotier-one"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
