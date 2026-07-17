@@ -173,6 +173,8 @@ brew "the_silver_searcher"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Source code beautifier
 brew "uncrustify"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -197,6 +199,8 @@ brew "zsh-autosuggestions"
 cask "adrive"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Multi-track audio editor and recorder
+cask "audacity"
 # Display management tool
 cask "betterdisplay"
 # Screen capturing and editing tool
@@ -227,8 +231,6 @@ cask "keepassxc"
 cask "keepingyouawake"
 # File archiver
 cask "keka"
-# Agent-centric IDE with spec-driven development
-cask "kiro"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
@@ -263,8 +265,6 @@ cask "sourcegit"
 cask "stats"
 # Real time file synchronisation software
 cask "syncthing-app"
-# Mesh VPN based on WireGuard
-cask "tailscale-app"
 # Desktop client for Telegram messenger
 cask "telegram-desktop"
 # Utility to switch between applications
@@ -275,14 +275,10 @@ cask "visual-studio-code"
 cask "wechat"
 # Text input app from WeChat team for Chinese users
 cask "wetype"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
 # Multi-platform note application
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
 cask "yuanbao"
-# Mesh VPN client
-cask "zerotier-one"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
