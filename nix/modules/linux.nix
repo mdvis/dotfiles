@@ -36,6 +36,8 @@ with pkgs;[
   stretchly
   stylelint
   stylua
+  tree-sitter
+  lua55Packages.tree-sitter-cli
   uv
   vscode
   wezterm
