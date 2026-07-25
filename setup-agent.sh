@@ -11,7 +11,11 @@ echo -e "${BOLD}🤖 安装 AI Agent Code Tools${RESET}"
 echo ""
 
 install_tool() {
-    local name="$1" url="$2" shell="${3:-bash}"
+    local name="$1" url="$2" shell="${3:-bash}" cmd="${4:-}"
+    if [[ -n "$cmd" ]] && command -v "$cmd" >/dev/null 2>&1; then
+        echo -e "  ➜ ${name} ... ${GREEN}已安装，跳过${RESET}"
+        return 0
+    fi
     echo -n "  ➜ ${name} ... "
     if curl -fsSL "$url" | $shell >/dev/null 2>&1; then
         echo -e "${GREEN}✔${RESET}"
@@ -20,15 +24,15 @@ install_tool() {
     fi
 }
 
-install_tool "Pi Agent" "https://pi.dev/install.sh" sh
-install_tool "OpenCode" "https://opencode.ai/install" bash
-install_tool "Grok Build" "https://x.ai/cli/install.sh" bash
-install_tool "Claude Code" "https://claude.ai/install.sh" bash
-install_tool "Codex CLI" "https://chatgpt.com/codex/install.sh" sh
-install_tool "Antigravity CLI" "https://antigravity.google/cli/install.sh" bash
+install_tool "Pi Agent" "https://pi.dev/install.sh" sh pi
+install_tool "OpenCode" "https://opencode.ai/install" bash opencode
+install_tool "Grok Build" "https://x.ai/cli/install.sh" bash grok
+install_tool "Claude Code" "https://claude.ai/install.sh" bash claude
+install_tool "Codex CLI" "https://chatgpt.com/codex/install.sh" sh codex
+install_tool "Antigravity CLI" "https://antigravity.google/cli/install.sh" bash agy
 
-install_tool "OpenClaw" "https://openclaw.ai/install.sh" bash
-install_tool "Hermes Agent" "https://hermes-agent.nousresearch.com/install.sh" bash
+install_tool "OpenClaw" "https://openclaw.ai/install.sh" bash openclaw
+install_tool "Hermes Agent" "https://hermes-agent.nousresearch.com/install.sh" bash hermes
 
 echo ""
 echo -e "${GREEN}${BOLD}完成!${RESET}"
