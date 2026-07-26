@@ -99,6 +99,8 @@ brew "lazygit"
 brew "lazyssh"
 # GNOME XML library
 brew "libxml2"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Utility for directing compilation
 brew "make"
 # Java-based project management
