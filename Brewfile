@@ -215,8 +215,12 @@ cask "calibre"
 cask "coteditor"
 # Write, edit, and chat about your code with AI
 cask "cursor"
+# Universal database tool and SQL client
+cask "dbeaver-community"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
+# Database management tool
+cask "dbx"
 # Posture monitoring app
 cask "dorso"
 # Free and open-source image editor
@@ -257,6 +261,8 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # Cross-platform video editor
 cask "openshot-video-editor"
+# AI assistant and chatbot powered by Alibaba's Qwen model
+cask "qianwen"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # PDF viewer designed for reading research papers and technical books
@@ -279,8 +285,6 @@ cask "wechat"
 cask "wetype"
 # Multi-platform note application
 cask "youdaonote"
-# Tencent AI Assistant with Hunyuan and DeepSeek LLMs
-cask "yuanbao"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
