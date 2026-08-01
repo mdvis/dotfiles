@@ -193,6 +193,8 @@ brew "xonsh"
 brew "yamllint"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
@@ -223,6 +225,12 @@ cask "dbgate"
 cask "dbx"
 # Posture monitoring app
 cask "dorso"
+# Online diagram software
+cask "drawio"
+# Dictionary and translator app
+cask "easydict"
+# Cross-platform Text Expander written in Rust
+cask "espanso"
 # Free and open-source image editor
 cask "gimp"
 # Web browser
@@ -231,12 +239,16 @@ cask "google-chrome"
 cask "httpie-desktop"
 # Free and open-source media player
 cask "iina"
+# Menu bar calendar
+cask "itsycal"
 # Password manager app
 cask "keepassxc"
 # Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
 # File archiver
 cask "keka"
+# AI-powered productivity tool for the command-line
+cask "kiro-cli"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
@@ -249,6 +261,8 @@ cask "maccy"
 cask "macfuse"
 # Markdown editor
 cask "mark-text"
+# Extensible two-pane file manager
+cask "marta"
 # Visual diff and merge tool
 cask "meld"
 # Full-featured download manager built with Tauri
@@ -269,12 +283,12 @@ cask "rectangle"
 cask "sioyek"
 # Git GUI client
 cask "sourcegit"
-# System monitor for the menu bar
-cask "stats"
 # Real time file synchronisation software
 cask "syncthing-app"
 # Desktop client for Telegram messenger
 cask "telegram-desktop"
+# Cleanup and system status tool
+cask "tencent-lemon"
 # Utility to switch between applications
 cask "thor"
 # Open-source code editor
