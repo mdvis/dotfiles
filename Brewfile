@@ -301,6 +301,8 @@ cask "wechat"
 cask "wetype"
 # Multi-platform note application
 cask "youdaonote"
+# Tencent AI Assistant with Hunyuan and DeepSeek LLMs
+cask "yuanbao"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
