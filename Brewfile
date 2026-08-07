@@ -217,14 +217,8 @@ cask "calibre"
 cask "codebuddy-cn"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
-# Write, edit, and chat about your code with AI
-cask "cursor"
-# Universal database tool and SQL client
-cask "dbeaver-community"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
-# Database management tool
-cask "dbx"
 # Posture monitoring app
 cask "dorso"
 # Online diagram software
@@ -249,10 +243,6 @@ cask "keepassxc"
 cask "keepingyouawake"
 # File archiver
 cask "keka"
-# AI-powered productivity tool for the command-line
-cask "kiro-cli"
-# Free cross-platform office suite, fresh version
-cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Open-source firewall to block unknown outgoing connections
@@ -277,8 +267,6 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # Cross-platform video editor
 cask "openshot-video-editor"
-# AI assistant and chatbot powered by Alibaba's Qwen model
-cask "qianwen"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # PDF viewer designed for reading research papers and technical books
@@ -299,6 +287,8 @@ cask "visual-studio-code"
 cask "wechat"
 # Text input app from WeChat team for Chinese users
 cask "wetype"
+# All-in-one office service platform in Chinese
+cask "wpsoffice-cn"
 # Multi-platform note application
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
