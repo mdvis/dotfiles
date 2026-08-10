@@ -213,8 +213,6 @@ cask "bettershot"
 cask "blender"
 # E-books management software
 cask "calibre"
-# AI-powered adaptive IDE (Chinese version)
-cask "codebuddy-cn"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
