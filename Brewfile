@@ -1,4 +1,5 @@
 tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
+tap "docker/tap", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -51,8 +52,6 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Terminal JSON viewer
@@ -97,6 +96,8 @@ brew "lazydocker"
 brew "lazygit"
 # Terminal-based SSH manager
 brew "lazyssh"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # GNOME XML library
 brew "libxml2"
 # Package manager for the Lua programming language
@@ -267,6 +268,8 @@ cask "openinterminal-lite"
 cask "openshot-video-editor"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Build, run, and govern agents across the software development lifecycle
+cask "docker/tap/sbx", trusted: true
 # PDF viewer designed for reading research papers and technical books
 cask "sioyek"
 # Git GUI client
