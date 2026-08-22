@@ -1,5 +1,4 @@
 tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
-tap "docker/tap", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -268,8 +267,6 @@ cask "openinterminal-lite"
 cask "openshot-video-editor"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# Build, run, and govern agents across the software development lifecycle
-cask "docker/tap/sbx", trusted: true
 # PDF viewer designed for reading research papers and technical books
 cask "sioyek"
 # Git GUI client
