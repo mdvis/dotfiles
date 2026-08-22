@@ -220,10 +220,6 @@ cask "coteditor"
 cask "dbgate"
 # Posture monitoring app
 cask "dorso"
-# Online diagram software
-cask "drawio"
-# Dictionary and translator app
-cask "easydict"
 # Cross-platform Text Expander written in Rust
 cask "espanso"
 # Free and open-source image editor
@@ -278,8 +274,6 @@ cask "sourcegit"
 cask "syncthing-app"
 # Desktop client for Telegram messenger
 cask "telegram-desktop"
-# Cleanup and system status tool
-cask "tencent-lemon"
 # Utility to switch between applications
 cask "thor"
 # Open-source code editor
