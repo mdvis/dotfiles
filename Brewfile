@@ -1,4 +1,5 @@
 tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
+tap "harry0703/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -249,6 +250,8 @@ cask "lulu"
 cask "maccy"
 # File system integration
 cask "macfuse"
+# Safety-first disk cleaner and disk space analyzer
+cask "harry0703/tap/mangodisk", trusted: true
 # Markdown editor
 cask "mark-text"
 # Extensible two-pane file manager
