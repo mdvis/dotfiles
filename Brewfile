@@ -1,5 +1,6 @@
 tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
 tap "harry0703/tap"
+tap "lifedever/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
@@ -226,6 +227,8 @@ cask "espanso"
 cask "gimp"
 # Web browser
 cask "google-chrome"
+# macOS menu bar health reminder app
+cask "lifedever/tap/health-tick", trusted: true
 # Testing client for REST, GraphQL, and HTTP APIs
 cask "httpie-desktop"
 # Free and open-source media player
