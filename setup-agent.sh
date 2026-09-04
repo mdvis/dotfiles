@@ -26,7 +26,6 @@ install_tool() {
 
 install_tool "Pi Agent" "https://pi.dev/install.sh" sh pi
 install_tool "Claude Code" "https://claude.ai/install.sh" bash claude
-install_tool "OpenClaw" "https://openclaw.ai/install.sh" bash openclaw
 install_tool "Codex CLI" "https://chatgpt.com/codex/install.sh" sh codex
 install_tool "Hermes Agent" "https://hermes-agent.nousresearch.com/install.sh" bash hermes
 
