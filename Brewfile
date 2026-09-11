@@ -237,6 +237,8 @@ cask "httpie-desktop"
 cask "iina"
 # Menu bar calendar
 cask "itsycal"
+# Free and Open Source Video Editor
+cask "kdenlive"
 # Password manager app
 cask "keepassxc"
 # Tool to prevent the system from going into sleep mode
@@ -261,14 +263,14 @@ cask "marta"
 cask "meld"
 # Full-featured download manager built with Tauri
 cask "aninsomniacy/motrix-next/motrix-next", trusted: true
+# Free and open-source RSS reader
+cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
 cask "ollama-app"
 # Finder Toolbar app to open the current directory in Terminal
 cask "openinterminal-lite"
-# Cross-platform video editor
-cask "openshot-video-editor"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # PDF viewer designed for reading research papers and technical books
