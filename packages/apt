@@ -65,6 +65,7 @@ samba
 shellcheck
 shfmt
 silversearcher-ag
+sioyek
 smartmontools
 sqlfluff
 strace
