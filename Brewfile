@@ -215,6 +215,8 @@ cask "bettershot"
 cask "blender"
 # E-books management software
 cask "calibre"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
 # Write, edit, and chat about your code with AI
@@ -273,8 +275,6 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# PDF viewer designed for reading research papers and technical books
-cask "sioyek"
 # Git GUI client
 cask "sourcegit"
 # Real time file synchronisation software
