@@ -1,4 +1,4 @@
-tap "aninsomniacy/motrix-next", "https://github.com/AnInsomniacy/homebrew-motrix-next"
+tap "aninsomniacy/rayburst", "https://github.com/AnInsomniacy/homebrew-rayburst.git"
 tap "harry0703/tap"
 tap "lifedever/tap"
 # Simple, modern, secure file encryption
@@ -251,6 +251,8 @@ cask "keka"
 cask "localsend"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
+# System cleaner, optimiser, and malware scanner
+cask "mac-sai"
 # Clipboard manager
 cask "maccy"
 # File system integration
@@ -263,8 +265,7 @@ cask "mark-text"
 cask "marta"
 # Visual diff and merge tool
 cask "meld"
-# Full-featured download manager built with Tauri
-cask "aninsomniacy/motrix-next/motrix-next", trusted: true
+cask "motrix-next"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
