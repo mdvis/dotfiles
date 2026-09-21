@@ -268,6 +268,8 @@ cask "meld"
 cask "motrix-next"
 # Free and open-source RSS reader
 cask "netnewswire"
+# PDF viewer designed for reading research papers and technical books
+cask "sioyek"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
