@@ -215,18 +215,12 @@ cask "bettershot"
 cask "blender"
 # E-books management software
 cask "calibre"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 # Plain-text editor for web pages, program source codes and more
 cask "coteditor"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
 # Posture monitoring app
 cask "dorso"
-# Cross-platform Text Expander written in Rust
-cask "espanso"
 # Free and open-source image editor
 cask "gimp"
 # Web browser
@@ -251,8 +245,6 @@ cask "keka"
 cask "localsend"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
-# System cleaner, optimiser, and malware scanner
-cask "mac-sai"
 # Clipboard manager
 cask "maccy"
 # File system integration
@@ -292,6 +284,8 @@ cask "visual-studio-code"
 cask "wechat"
 # Text input app from WeChat team for Chinese users
 cask "wetype"
+# AI agent for everyday office work
+cask "workbuddy-cn"
 # All-in-one office service platform in Chinese
 cask "wpsoffice-cn"
 # Multi-platform note application
