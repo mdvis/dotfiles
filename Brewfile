@@ -1,10 +1,13 @@
-tap "aninsomniacy/rayburst", "https://github.com/AnInsomniacy/homebrew-rayburst.git"
+tap "abue-ammar/tinycast"
+tap "aninsomniacy/rayburst", trusted: true
 tap "harry0703/tap"
 tap "lifedever/tap"
+tap "stablyai/orca"
+tap "thedavidweng/unsigned-tap", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -204,7 +207,7 @@ brew "zsh-autosuggestions"
 # Intelligent cloud storage platform
 cask "adrive"
 # GPU-accelerated terminal emulator
-cask "alacritty"
+cask "thedavidweng/unsigned-tap/alacritty", trusted: true
 # Multi-track audio editor and recorder
 cask "audacity"
 # Display management tool
@@ -252,7 +255,7 @@ cask "macfuse"
 # Safety-first disk cleaner and disk space analyzer
 cask "harry0703/tap/mangodisk", trusted: true
 # Markdown editor
-cask "mark-text"
+cask "thedavidweng/unsigned-tap/mark-text", trusted: true
 # Extensible two-pane file manager
 cask "marta"
 # Visual diff and merge tool
@@ -260,16 +263,18 @@ cask "meld"
 cask "motrix-next"
 # Free and open-source RSS reader
 cask "netnewswire"
-# PDF viewer designed for reading research papers and technical books
-cask "sioyek"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
 cask "ollama-app"
 # Finder Toolbar app to open the current directory in Terminal
 cask "openinterminal-lite"
+# IDE for orchestrating AI coding agents across terminals and worktrees
+cask "stablyai/orca/orca", trusted: true
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# PDF viewer designed for reading research papers and technical books
+cask "thedavidweng/unsigned-tap/sioyek", trusted: true
 # Git GUI client
 cask "sourcegit"
 # Real time file synchronisation software
@@ -278,6 +283,8 @@ cask "syncthing-app"
 cask "telegram-desktop"
 # Utility to switch between applications
 cask "thor"
+# Tiny, fully native launcher, hotkeys, and clipboard history
+cask "abue-ammar/tinycast/tinycast", trusted: true
 # Open-source code editor
 cask "visual-studio-code"
 # Free messaging and calling application
