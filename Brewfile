@@ -222,6 +222,8 @@ cask "calibre"
 cask "coteditor"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
+# Plugin-based AI agent desktop application
+cask "deepseek-harness"
 # Posture monitoring app
 cask "dorso"
 # Free and open-source image editor
@@ -271,6 +273,8 @@ cask "ollama-app"
 cask "openinterminal-lite"
 # IDE for orchestrating AI coding agents across terminals and worktrees
 cask "stablyai/orca/orca", trusted: true
+# Ontology editor
+cask "thedavidweng/unsigned-tap/protege", trusted: true
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # PDF viewer designed for reading research papers and technical books
