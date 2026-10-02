@@ -305,6 +305,8 @@ cask "wpsoffice-cn"
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
 cask "yuanbao"
+# Collect, organise, cite, and share research sources
+cask "zotero"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
