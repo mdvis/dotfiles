@@ -263,6 +263,8 @@ cask "marta"
 # Visual diff and merge tool
 cask "meld"
 cask "motrix-next"
+# Tool for editing metadata of audio files including MP3, FLAC, OGG, and more
+cask "mp3tag"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
