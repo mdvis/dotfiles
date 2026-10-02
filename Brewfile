@@ -232,6 +232,8 @@ cask "gimp"
 cask "google-chrome"
 # macOS menu bar health reminder app
 cask "lifedever/tap/health-tick", trusted: true
+# Open-source desktop AI agent
+cask "hermes-desktop"
 # Testing client for REST, GraphQL, and HTTP APIs
 cask "httpie-desktop"
 # Free and open-source media player
