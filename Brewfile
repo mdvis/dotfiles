@@ -299,8 +299,6 @@ cask "visual-studio-code"
 cask "wechat"
 # Text input app from WeChat team for Chinese users
 cask "wetype"
-# AI agent for everyday office work
-cask "workbuddy-cn"
 # All-in-one office service platform in Chinese
 cask "wpsoffice-cn"
 # Multi-platform note application
