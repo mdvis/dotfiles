@@ -1,4 +1,3 @@
-tap "abue-ammar/tinycast"
 tap "aninsomniacy/rayburst", trusted: true
 tap "harry0703/tap"
 tap "lifedever/tap"
@@ -212,8 +211,6 @@ cask "thedavidweng/unsigned-tap/alacritty", trusted: true
 cask "audacity"
 # Display management tool
 cask "betterdisplay"
-# Screen capturing and editing tool
-cask "bettershot"
 # 3D creation suite
 cask "blender"
 # E-books management software
@@ -238,22 +235,16 @@ cask "hermes-desktop"
 cask "httpie-desktop"
 # Free and open-source media player
 cask "iina"
-# Menu bar calendar
-cask "itsycal"
 # Free and Open Source Video Editor
 cask "kdenlive"
 # Password manager app
 cask "keepassxc"
-# Tool to prevent the system from going into sleep mode
-cask "keepingyouawake"
 # File archiver
 cask "keka"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
-# Clipboard manager
-cask "maccy"
 # File system integration
 cask "macfuse"
 # Safety-first disk cleaner and disk space analyzer
@@ -279,8 +270,6 @@ cask "openinterminal-lite"
 cask "stablyai/orca/orca", trusted: true
 # Ontology editor
 cask "thedavidweng/unsigned-tap/protege", trusted: true
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
 # PDF viewer designed for reading research papers and technical books
 cask "thedavidweng/unsigned-tap/sioyek", trusted: true
 # Git GUI client
@@ -289,12 +278,10 @@ cask "sourcegit"
 cask "syncthing-app"
 # Desktop client for Telegram messenger
 cask "telegram-desktop"
-# Utility to switch between applications
-cask "thor"
-# Tiny, fully native launcher, hotkeys, and clipboard history
-cask "abue-ammar/tinycast/tinycast", trusted: true
 # Open-source code editor
 cask "visual-studio-code"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Free messaging and calling application
 cask "wechat"
 # Text input app from WeChat team for Chinese users
