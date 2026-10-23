@@ -5,8 +5,6 @@ tap "stablyai/orca"
 tap "thedavidweng/unsigned-tap", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -15,26 +13,14 @@ brew "atuin"
 brew "bash"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
-# TIFF library and utilities
-brew "libtiff"
-# Check Java source against a coding standard
-brew "checkstyle"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima", restart_service: :changed
-# Spell checker for code
-brew "cspell"
-# Reimplementation of ctags(1)
-brew "ctags"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# YAML Parser
-brew "libyaml"
-# Lint & Format HTML Templates
-brew "djlint"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Docker CLI plugin for extended build capabilities with BuildKit
@@ -55,6 +41,8 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: true
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Terminal JSON viewer
@@ -63,6 +51,8 @@ brew "fx"
 brew "fzf"
 # GNU compiler collection
 brew "gcc"
+# TIFF library and utilities
+brew "libtiff"
 # GitHub command-line tool
 brew "gh"
 # Git extension for versioning large files
@@ -81,8 +71,6 @@ brew "go"
 brew "goaccess"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
 # Tools and libraries to manipulate images in select formats
@@ -99,72 +87,44 @@ brew "lazydocker"
 brew "lazygit"
 # Terminal-based SSH manager
 brew "lazyssh"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
-# GNOME XML library
-brew "libxml2"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Utility for directing compilation
 brew "make"
-# Java-based project management
-brew "maven"
 # Run a Kubernetes cluster locally
 brew "minikube"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Simple tool to make locally trusted development certificates
-brew "mkcert"
 # Deep clean and optimize your Mac
 brew "mole"
-# Atlas CLI enables you to manage your MongoDB Atlas
-brew "mongodb-atlas-cli"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# NPM registry manager, fast switch between different registries
-brew "nrm"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# C library to read whole-slide images (a.k.a. virtual slides)
-brew "openslide"
-# Drop-in replacement for Terraform. Infrastructure as Code Tool
-brew "opentofu"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Pandoc filter for numbering and cross-referencing
 brew "pandoc-crossref"
 # Open-source vector similarity search for Postgres
 brew "pgvector"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
 brew "postgresql@17", restart_service: :changed
-# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
-brew "prettier"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: :changed
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Extremely fast Python linter, written in Rust
-brew "ruff"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
-# Autoformat shell script source code
-brew "shfmt"
 # Cross-platform application to monitor your network traffic
 brew "sniffnet"
-# SQL linter and auto-formatter for Humans
-brew "sqlfluff"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Modern CSS linter
-brew "stylelint"
-# Opinionated Lua code formatter
-brew "stylua"
 # Feature-rich console based todo list manager
 brew "task"
 # Terminal user interface for taskwarrior
@@ -187,18 +147,12 @@ brew "uncrustify"
 brew "uv"
 # Vi 'workalike' with many additional features
 brew "vim"
-# Image processing library
-brew "vips"
 # HTTP, HTTP2, HTTPS, Websocket debugging proxy
 brew "whistle"
 # Python-powered, cross-platform, Unix-gazing shell language and command prompt
 brew "xonsh"
-# Linter for YAML files
-brew "yamllint"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Feature-rich command-line audio/video downloader
-brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
