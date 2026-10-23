@@ -1,6 +1,7 @@
 tap "aninsomniacy/rayburst", trusted: true
 tap "harry0703/tap"
 tap "lifedever/tap"
+tap "mongodb/brew", trusted: true
 tap "stablyai/orca"
 tap "thedavidweng/unsigned-tap", trusted: true
 # Simple, modern, secure file encryption
@@ -159,6 +160,8 @@ brew "yazi"
 brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community"
 # Intelligent cloud storage platform
 cask "adrive"
 # GPU-accelerated terminal emulator
