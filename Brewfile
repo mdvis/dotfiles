@@ -71,6 +71,8 @@ brew "go"
 brew "goaccess"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Kubernetes package manager
+brew "helm"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
 # Tools and libraries to manipulate images in select formats
