@@ -42,8 +42,6 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Terminal JSON viewer
@@ -106,6 +104,8 @@ brew "tree-sitter"
 brew "neovim"
 # Libraries for security-enabled client and server applications
 brew "nss"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Pandoc filter for numbering and cross-referencing
