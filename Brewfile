@@ -184,8 +184,6 @@ cask "deepseek-harness"
 cask "dorso"
 # Free and open-source image editor
 cask "gimp"
-# Web browser
-cask "google-chrome"
 # macOS menu bar health reminder app
 cask "lifedever/tap/health-tick", trusted: true
 # Open-source desktop AI agent
