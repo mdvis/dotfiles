@@ -216,6 +216,8 @@ cask "thedavidweng/unsigned-tap/mark-text", trusted: true
 cask "marta"
 # Visual diff and merge tool
 cask "meld"
+# Multi-platform web browser
+cask "microsoft-edge"
 cask "motrix-next"
 # Free and open-source RSS reader
 cask "netnewswire"
