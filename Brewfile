@@ -216,7 +216,6 @@ cask "marta"
 cask "meld"
 # Multi-platform web browser
 cask "microsoft-edge"
-cask "motrix-next"
 # Free and open-source RSS reader
 cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -229,6 +228,8 @@ cask "openinterminal-lite"
 cask "stablyai/orca/orca", trusted: true
 # Ontology editor
 cask "thedavidweng/unsigned-tap/protege", trusted: true
+# Download manager for files, torrents and streams
+cask "aninsomniacy/rayburst/rayburst"
 # PDF viewer designed for reading research papers and technical books
 cask "thedavidweng/unsigned-tap/sioyek", trusted: true
 # Git GUI client
