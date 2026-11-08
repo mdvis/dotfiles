@@ -252,6 +252,8 @@ cask "wpsoffice-cn"
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
 cask "yuanbao"
+# Multiplayer code editor
+cask "zed"
 # Collect, organise, cite, and share research sources
 cask "zotero"
 vscode "1yib.rust-bundle"
