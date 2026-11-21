@@ -192,14 +192,10 @@ cask "hermes-desktop"
 cask "httpie-desktop"
 # Free and open-source media player
 cask "iina"
-# Free and Open Source Video Editor
-cask "kdenlive"
 # Password manager app
 cask "keepassxc"
 # File archiver
 cask "keka"
-# Audio tagger focusing on efficiency
-cask "kid3"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Open-source firewall to block unknown outgoing connections
@@ -210,14 +206,10 @@ cask "macfuse"
 cask "harry0703/tap/mangodisk", trusted: true
 # Markdown editor
 cask "thedavidweng/unsigned-tap/mark-text", trusted: true
-# Extensible two-pane file manager
-cask "marta"
 # Visual diff and merge tool
 cask "meld"
 # Multi-platform web browser
 cask "microsoft-edge"
-# Free and open-source RSS reader
-cask "netnewswire"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
@@ -230,6 +222,8 @@ cask "stablyai/orca/orca", trusted: true
 cask "thedavidweng/unsigned-tap/protege", trusted: true
 # Download manager for files, torrents and streams
 cask "aninsomniacy/rayburst/rayburst"
+# Video editor
+cask "shotcut"
 # PDF viewer designed for reading research papers and technical books
 cask "thedavidweng/unsigned-tap/sioyek", trusted: true
 # Git GUI client
@@ -246,16 +240,14 @@ cask "vorssaint"
 cask "wechat"
 # Text input app from WeChat team for Chinese users
 cask "wetype"
+# AI agent for everyday office work
+cask "workbuddy-cn"
 # All-in-one office service platform in Chinese
 cask "wpsoffice-cn"
 # Multi-platform note application
 cask "youdaonote"
 # Tencent AI Assistant with Hunyuan and DeepSeek LLMs
 cask "yuanbao"
-# Multiplayer code editor
-cask "zed"
-# Collect, organise, cite, and share research sources
-cask "zotero"
 vscode "1yib.rust-bundle"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
